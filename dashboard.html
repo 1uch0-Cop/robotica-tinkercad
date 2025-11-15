@@ -1,420 +1,295 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dashboard Avanzado – Taller de Robótica</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard del Estudiante – Guardianes del Desierto</title>
 
-<style>
-:root {
-  --cobre: #b87333;
-  --cian: #00ffff;
-  --azul: #0a0f1f;
-  --blanco: #f4f4f4;
-  --panel: rgba(255,255,255,0.08);
-  --shadow: rgba(0,255,255,0.3);
-}
+  <style>
+    :root {
+      --cobre: #b87333;
+      --cian: #00ffff;
+      --azul: #0a0f1f;
+      --blanco: #f4f4f4;
+    }
 
-/* Modo claro */
-.light {
-  --azul: #f4f4f4;
-  --blanco: #0a0f1f;
-  --panel: rgba(0,0,0,0.08);
-  --shadow: rgba(0,0,0,0.2);
-}
+    body {
+      margin: 0;
+      background: var(--azul);
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--blanco);
+    }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--azul);
-  color: var(--blanco);
-  margin: 0;
-  transition: background 0.3s, color 0.3s;
-}
+    header {
+      background-image:
+        linear-gradient(rgba(10,15,31,0.75), rgba(10,15,31,0.8)),
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1500&q=80');
+      background-size: cover;
+      background-position: center;
+      padding: 3rem 1rem;
+      text-align: center;
+      border-bottom: 3px solid var(--cian);
+    }
 
-header {
-  text-align: center;
-  padding: 2rem 1rem;
-  background-image:
-    linear-gradient(rgba(10,15,31,0.65), rgba(10,15,31,0.85)),
-    url('https://images.unsplash.com/photo-1581091870621-1b77ba9f47b9?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;
-  border-bottom: 2px solid var(--cian);
-}
-header h1 {
-  color: var(--cian);
-  text-shadow: 0 0 10px var(--shadow);
-}
+    header h1 {
+      color: var(--cian);
+      font-size: 2rem;
+      margin: 0;
+      text-shadow: 0 0 10px rgba(0,255,255,0.5);
+    }
 
-main {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: rgba(255,255,255,0.04);
-  border-radius: 12px;
-  box-shadow: 0 0 15px var(--shadow);
-}
+    nav {
+      text-align:center;
+      background:rgba(255,255,255,0.05);
+      padding:0.8rem;
+      border-bottom:1px solid rgba(255,255,255,0.2);
+      margin-bottom:2rem;
+    }
+    nav a {
+      color:var(--cian);
+      margin:0 1rem;
+      text-decoration:none;
+      font-weight:bold;
+    }
 
-.card {
-  background: var(--panel);
-  padding: 1.5rem;
-  border-radius: 12px;
-  border-left: 4px solid var(--cian);
-  margin-bottom: 1.5rem;
-  box-shadow: 0 0 12px rgba(0,255,255,0.15);
-  transition: 0.3s;
-}
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 18px rgba(0,255,255,0.35);
-}
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
 
-h2 { color: var(--cian); }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 12px rgba(0,255,255,0.1);
+    }
 
-/* Botones */
-.btn {
-  display: inline-block;
-  background: var(--cobre);
-  padding: 0.7rem 1.2rem;
-  color: var(--azul);
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.btn:hover {
-  background: var(--cian); color: var(--azul);
-}
+    h2 {
+      color: var(--cian);
+      margin-top: 0;
+    }
 
-/* Progreso */
-.progress-container {
-  background: #002233;
-  border-radius: 8px;
-  overflow: hidden;
-  height: 22px;
-}
-.progress-bar {
-  height: 100%;
-  width: 0%;
-  background: var(--cian);
-  transition: width 0.6s ease;
-  box-shadow: 0 0 10px var(--cian);
-}
+    input {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      background: rgba(255,255,255,0.1);
+      color: var(--blanco);
+      border-radius: 6px;
+      border: none;
+    }
 
-/* Perfil */
-.profile-box {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem;
-}
-.profile-avatar {
-  width: 85px;
-  height: 85px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-.profile-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .btn {
+      background: var(--cobre);
+      border: none;
+      padding: 0.8rem 1.3rem;
+      border-radius: 6px;
+      color: var(--azul);
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration:none;
+      display:inline-block;
+    }
+    .btn:hover {
+      background: var(--cian);
+      color: var(--azul);
+      box-shadow: 0 0 10px var(--cian);
+    }
 
-/* Ranking */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: rgba(255,255,255,0.05);
-}
-table th, table td {
-  padding: 0.6rem;
-  text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-table th { background: rgba(255,255,255,0.1); color: var(--cian); }
+    .evidencia-img {
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      margin: 5px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
 
-/* Panel admin */
-#admin {
-  display: none;
-  background: #001f2e;
-  padding: 1rem;
-  border-radius: 12px;
-  margin-top: 1rem;
-}
-#admin input { padding: 0.4rem; margin: 0.2rem; border-radius: 6px; }
-
-/* Evidencias */
-.evidence-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-}
-.evidence-item {
-  background: rgba(255,255,255,0.08);
-  padding: 0.5rem;
-  border-radius: 10px;
-  position: relative;
-}
-.evidence-item img {
-  width: 100%;
-  border-radius: 8px;
-}
-.delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: red;
-  color: white;
-  border: none;
-  padding: 0.3rem 0.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Responsive */
-@media(max-width:600px){
-  main { padding: 1rem; }
-  .profile-box { flex-direction: column; text-align: center; }
-}
-</style>
+    footer {
+      text-align:center;
+      padding:1.5rem;
+      font-size:0.9rem;
+      background:rgba(255,255,255,0.05);
+      border-top:1px solid rgba(255,255,255,0.1);
+      margin-top:3rem;
+    }
+    footer span { color:red; }
+  </style>
 </head>
 
 <body>
 
-<button id="toggleMode" style="position:fixed;top:10px;right:10px;">🌙 / ☀️</button>
-
 <header>
-  <h1>📊 Dashboard Avanzado – Taller de Robótica</h1>
-  <h3>Seguimiento, perfiles, ranking y evidencias</h3>
+  <h1>📊 Dashboard del Estudiante</h1>
 </header>
+
+<nav>
+  <a href="index.html">🏠 Inicio</a>
+  <a href="talleres.html">📚 Talleres</a>
+  <a href="dashboard.html">📊 Dashboard</a>
+  <a href="politica-privacidad.html">🔒 Privacidad</a>
+</nav>
 
 <main>
 
-<!-- ============================
-     PERFIL DEL ESTUDIANTE
-=============================== -->
-<div class="card">
-  <h2>👤 Perfil del Estudiante</h2>
+  <!-- PERFIL -->
+  <section class="card">
+    <h2>👤 Perfil del Estudiante</h2>
 
-  <div class="profile-box">
-    <div class="profile-avatar">
-      <img id="avatar" src="">
-    </div>
-    <div>
-      <p><strong>Nombre:</strong> <span id="pName">—</span></p>
-      <p><strong>Curso:</strong> <span id="pCourse">—</span></p>
-      <p><strong>Establecimiento:</strong> <span id="pSchool">—</span></p>
-    </div>
-  </div>
+    <label>Nombre</label>
+    <input id="nombreEst">
 
-  <button class="btn" onclick="toggleProfile()">Editar Perfil</button>
+    <label>Curso</label>
+    <input id="cursoEst">
 
-  <div id="profileEditor" style="display:none;margin-top:1rem;">
-    <input id="nameInput" type="text" placeholder="Nombre"><br>
-    <input id="courseInput" type="text" placeholder="Curso"><br>
-    <input id="schoolInput" type="text" placeholder="Escuela"><br>
-    <input id="avatarInput" type="text" placeholder="URL Avatar">
-    <button class="btn" onclick="saveProfile()">Guardar</button>
-  </div>
-</div>
+    <label>Escuela</label>
+    <input id="escuelaEst">
+  </section>
 
-<!-- ============================
-     PROGRESO GENERAL
-=============================== -->
-<div class="card">
-  <h2>📈 Progreso del Taller</h2>
-  <div class="progress-container">
-    <div class="progress-bar" id="progressBar"></div>
-  </div>
-  <p>Avance actual: <strong id="progressText">0%</strong></p>
+  <!-- AVANCE -->
+  <section class="card">
+    <h2>🏅 Avance</h2>
+    <input id="puntosEst" type="number" placeholder="0">
+    <button class="btn" onclick="sumarPunto()">+ Agregar Punto</button>
+    <p id="mostrarPuntos" style="margin-top:1rem;font-size:1.2rem;color:var(--cian);"></p>
+  </section>
 
-  <input id="newProgress" type="number" min="0" max="100" value="25">
-  <button class="btn" onclick="updateProgress()">Actualizar progreso</button>
-</div>
+  <!-- BIBLIOTECA -->
+  <section class="card">
+    <h2>📚 Biblioteca de Recursos</h2>
+    <p><a class="btn" href="https://www.tinkercad.com" target="_blank">🌐 Abrir Tinkercad</a></p>
+    <p><a class="btn" href="#">📄 Guía PDF – Sesión 1</a></p>
+    <p><a class="btn" href="#">📄 Guía PDF – Sesión 2</a></p>
+  </section>
 
-<!-- ============================
-     RANKING FORMATIVO
-=============================== -->
-<div class="card">
-  <h2>📊 Ranking Formativo</h2>
-  <table id="rankingTable">
-    <tr><th>Nombre</th><th>Progreso</th><th>Misiones</th></tr>
-  </table>
+  <!-- EVIDENCIAS -->
+  <section class="card">
+    <h2>📸 Evidencias del Progreso</h2>
 
-  <button class="btn" onclick="toggleAdmin()">Panel Instructor</button>
+    <input type="file" accept="image/*" id="subirEvidencia">
+    <button class="btn" onclick="guardarEvidencia()">Guardar evidencia</button>
 
-  <div id="admin">
-    <input id="rName" type="text" placeholder="Nombre">
-    <input id="rProgress" type="number" placeholder="Progreso" min="0" max="100">
-    <input id="rMissions" type="number" placeholder="Misiones" min="0">
-    <button class="btn" onclick="addRanking()">Agregar al Ranking</button>
-  </div>
-</div>
+    <div id="contenedorEvidencias" style="margin-top:1rem;"></div>
+  </section>
 
-<!-- ============================
-     EVIDENCIAS
-=============================== -->
-<div class="card">
-  <h2>📷 Evidencias de los Estudiantes</h2>
-
-  <input type="file" id="evidenceInput" accept="image/*">
-  <button class="btn" onclick="uploadEvidence()">Subir evidencia</button>
-
-  <div class="evidence-grid" id="evidenceGrid"></div>
-</div>
-
-<p style="text-align:center;">
-  <a class="btn" href="index.html">⬅ Volver</a>
-</p>
+  <!-- BORRADO -->
+  <section class="card">
+    <button class="btn" style="background:red;color:white;" onclick="borrarTodo()">🗑 Borrar todos mis datos</button>
+  </section>
 
 </main>
 
 <footer>
-  Desarrollado con ❤️ por Luis Jofré Pérez – Escuela Las Canteras  
-  © 2025 Guardianes del Desierto 🦊
+  <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/logo.png?raw=true"
+       style="width:70px;opacity:0.95;">
+  <p>Desarrollado con ❤️ por <strong>Luis Jofré Pérez</strong> – Escuela Las Canteras 🌵<br>
+  Guardianes del Desierto © 2025 🦊</p>
 </footer>
 
-<!-- ============================
-     JAVASCRIPT
-=============================== -->
+<!-- CryptoJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+
 <script>
+  const SECRET_KEY = "Guardianes2025-Seguridad-Atacama";
 
-// =====================
-//  Modo claro/oscuro
-// =====================
-document.getElementById("toggleMode").onclick = () =>
-  document.body.classList.toggle("light");
+  function encryptData(data) {
+    return CryptoJS.AES.encrypt(JSON.stringify(data), SECRET_KEY).toString();
+  }
 
-// =====================
-//     PERFIL
-// =====================
-function toggleProfile(){
-  const box = document.getElementById("profileEditor");
-  box.style.display = box.style.display === "block" ? "none" : "block";
-}
+  function decryptData(ciphertext) {
+    try {
+      const bytes = CryptoJS.AES.decrypt(ciphertext, SECRET_KEY);
+      return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+    } catch {
+      return null;
+    }
+  }
 
-function saveProfile(){
-  const name = document.getElementById("nameInput").value;
-  const course = document.getElementById("courseInput").value;
-  const school = document.getElementById("schoolInput").value;
-  const avatar = document.getElementById("avatarInput").value;
+  function saveLS(key, data) {
+    localStorage.setItem(key, encryptData(data));
+  }
 
-  localStorage.setItem("pName", name);
-  localStorage.setItem("pCourse", course);
-  localStorage.setItem("pSchool", school);
-  localStorage.setItem("pAvatar", avatar);
+  function loadLS(key) {
+    const data = localStorage.getItem(key);
+    return data ? decryptData(data) : null;
+  }
 
-  loadProfile();
-}
+  /* Perfil */
+  setInterval(() => {
+    saveLS("perfil", {
+      nombre: nombreEst.value,
+      curso: cursoEst.value,
+      escuela: escuelaEst.value
+    });
+  }, 3000);
 
-function loadProfile(){
-  document.getElementById("pName").textContent = localStorage.getItem("pName") || "—";
-  document.getElementById("pCourse").textContent = localStorage.getItem("pCourse") || "—";
-  document.getElementById("pSchool").textContent = localStorage.getItem("pSchool") || "—";
+  function cargarPerfil() {
+    const p = loadLS("perfil");
+    if (!p) return;
+    nombreEst.value = p.nombre || "";
+    cursoEst.value = p.curso || "";
+    escuelaEst.value = p.escuela || "";
+  }
 
-  const avatar = localStorage.getItem("pAvatar");
-  document.getElementById("avatar").src =
-    avatar && avatar !== "" ? avatar :
-    "https://api.dicebear.com/7.x/bottts/svg?seed=Estudiante";
-}
+  /* Puntos */
+  function sumarPunto() {
+    let n = parseInt(puntosEst.value) || 0;
+    n++;
+    puntosEst.value = n;
+    saveLS("puntos", n);
+    mostrarPuntos.textContent = `Puntaje: ${n} puntos`;
+  }
 
-// =====================
-//     PROGRESO
-// =====================
-function updateProgress(){
-  const val = document.getElementById("newProgress").value;
-  localStorage.setItem("progress", val);
+  function cargarPuntos() {
+    const p = loadLS("puntos");
+    if (p !== null) {
+      puntosEst.value = p;
+      mostrarPuntos.textContent = `Puntaje: ${p} puntos`;
+    }
+  }
 
-  document.getElementById("progressBar").style.width = val + "%";
-  document.getElementById("progressText").textContent = val + "%";
-}
+  /* Evidencias */
+  function guardarEvidencia() {
+    const file = subirEvidencia.files[0];
+    if (!file) return;
 
-function loadProgress(){
-  const val = localStorage.getItem("progress") || 0;
-  document.getElementById("progressBar").style.width = val + "%";
-  document.getElementById("progressText").textContent = val + "%";
-}
+    const reader = new FileReader();
+    reader.onload = () => {
+      const evid = loadLS("evidencias") || [];
+      evid.push(reader.result);
+      saveLS("evidencias", evid);
+      mostrarEvidencias();
+    };
+    reader.readAsDataURL(file);
+  }
 
-// =====================
-//     RANKING
-// =====================
-function addRanking(){
-  const name = document.getElementById("rName").value;
-  const progress = document.getElementById("rProgress").value;
-  const missions = document.getElementById("rMissions").value;
+  function mostrarEvidencias() {
+    const evid = loadLS("evidencias") || [];
+    contenedorEvidencias.innerHTML = "";
+    evid.forEach(src => {
+      const img = document.createElement("img");
+      img.className = "evidencia-img";
+      img.src = src;
+      contenedorEvidencias.appendChild(img);
+    });
+  }
 
-  const row = { name, progress, missions };
-  const ranking = JSON.parse(localStorage.getItem("ranking") || "[]");
+  function borrarTodo() {
+    if (confirm("¿Seguro que deseas borrar tus datos?")) {
+      localStorage.clear();
+      location.reload();
+    }
+  }
 
-  ranking.push(row);
-  localStorage.setItem("ranking", JSON.stringify(ranking));
-
-  loadRanking();
-}
-
-function loadRanking(){
-  const table = document.getElementById("rankingTable");
-  table.innerHTML = "<tr><th>Nombre</th><th>Progreso</th><th>Misiones</th></tr>";
-
-  const ranking = JSON.parse(localStorage.getItem("ranking") || "[]");
-
-  ranking.forEach(row => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `<td>${row.name}</td><td>${row.progress}%</td><td>${row.missions}</td>`;
-    table.appendChild(tr);
-  });
-}
-
-// =====================
-//     EVIDENCIAS
-// =====================
-function uploadEvidence(){
-  const fileInput = document.getElementById("evidenceInput");
-  const file = fileInput.files[0];
-  if(!file) return;
-
-  const reader = new FileReader();
-  reader.onload = function(e){
-    const evidences = JSON.parse(localStorage.getItem("evidences") || "[]");
-    evidences.push(e.target.result);
-    localStorage.setItem("evidences", JSON.stringify(evidences));
-    loadEvidences();
+  window.onload = () => {
+    cargarPerfil();
+    cargarPuntos();
+    mostrarEvidencias();
   };
-  reader.readAsDataURL(file);
-}
-
-function loadEvidences(){
-  const grid = document.getElementById("evidenceGrid");
-  grid.innerHTML = "";
-
-  const evidences = JSON.parse(localStorage.getItem("evidences") || "[]");
-
-  evidences.forEach((img, index) => {
-    const div = document.createElement("div");
-    div.className = "evidence-item";
-
-    div.innerHTML = `
-      <img src="${img}">
-      <button class="delete-btn" onclick="deleteEvidence(${index})">X</button>
-    `;
-    grid.appendChild(div);
-  });
-}
-
-function deleteEvidence(i){
-  const evidences = JSON.parse(localStorage.getItem("evidences") || "[]");
-  evidences.splice(i,1);
-  localStorage.setItem("evidences", JSON.stringify(evidences));
-  loadEvidences();
-}
-
-// =====================
-//     INICIALIZAR
-// =====================
-loadProfile();
-loadProgress();
-loadRanking();
-loadEvidences();
-
 </script>
 
 </body>
