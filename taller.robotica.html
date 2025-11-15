@@ -1,183 +1,271 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Taller de Robótica con Tinkercad – Guardianes del Desierto</title>
+  <head>
+    <meta charset="utf-8">
+    <title>Taller Robótica con Tinkercad – Guardianes del Desierto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    :root {
-      --cobre: #b87333;
-      --cian: #00ffff;
-      --azul: #0a0f1f;
-      --blanco: #f4f4f4;
-    }
+    <style>
+      :root {
+        --cobre: #b87333;
+        --cian: #00e5ff;
+        --oscuro: #080c12;
+        --texto: #f9fafb;
+        --gris-suave: #9ca3af;
+      }
 
-    body {
-      margin: 0;
-      background: var(--azul);
-      font-family: 'Segoe UI', sans-serif;
-      color: var(--blanco);
-    }
+      * { box-sizing: border-box; }
 
-    /* HEADER */
-    header {
-      background-image:
-        linear-gradient(rgba(10,15,31,0.7), rgba(10,15,31,0.7)),
-        url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1400&q=80');
-      background-size: cover;
-      background-position: center;
-      padding: 3rem 1rem;
-      text-align: center;
-      border-bottom: 3px solid var(--cian);
-    }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+        color: var(--texto);
+      }
 
-    header h1 {
-      color: var(--cian);
-      font-size: 2rem;
-      margin: 0;
-      text-shadow: 0 0 12px rgba(0,255,255,0.4);
-    }
+      a { text-decoration: none; color: inherit; }
 
-    header h3 {
-      color: var(--blanco);
-      margin-top: 0.5rem;
-      opacity: 0.9;
-    }
+      .topbar {
+        width: 100%;
+        padding: 14px 24px;
+        background: rgba(8, 12, 18, 0.9);
+        border-bottom: 1px solid rgba(184, 115, 51, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(10px);
+      }
 
-    /* NAV */
-    nav {
-      text-align: center;
-      background: rgba(255,255,255,0.05);
-      padding: 0.8rem;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      margin-bottom: 2rem;
-    }
-    nav a {
-      color: var(--cian);
-      margin: 0 1rem;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    nav a:hover { text-decoration: underline; }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 0.95rem;
+      }
 
-    /* MAIN */
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem;
-      background: rgba(255,255,255,0.05);
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,255,255,0.1);
-    }
+      .brand-logo {
+        width: 32px;
+        height: 32px;
+        border-radius: 999px;
+        border: 2px solid var(--cobre);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
 
-    h2 {
-      color: var(--cian);
-      margin-top: 2rem;
-    }
+      nav {
+        display: flex;
+        gap: 16px;
+        font-size: 0.9rem;
+      }
 
-    p, li {
-      line-height: 1.6;
-      text-align: justify;
-    }
+      nav a {
+        padding: 6px 10px;
+        border-radius: 999px;
+        color: var(--gris-suave);
+      }
 
-    ul { margin-left: 1.2rem; }
+      nav a:hover {
+        color: var(--texto);
+        background: rgba(184, 115, 51, 0.15);
+      }
 
-    .btn {
-      display: inline-block;
-      background: var(--cobre);
-      padding: 0.8rem 1.3rem;
-      border-radius: 6px;
-      color: var(--azul);
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s;
-      margin-top: 1rem;
-    }
-    .btn:hover {
-      background: var(--cian);
-      box-shadow: 0 0 10px var(--cian);
-      color: var(--azul);
-    }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 24px 16px 40px;
+      }
 
-    /* FOOTER */
-    footer {
-      text-align:center;
-      padding:1.5rem;
-      font-size:0.9rem;
-      background:rgba(255,255,255,0.05);
-      border-top:1px solid rgba(255,255,255,0.1);
-      margin-top:3rem;
-    }
-    footer img { width:70px; opacity:0.95; }
-    footer span { color:red; }
+      h1 {
+        font-size: clamp(1.7rem, 3vw, 2.1rem);
+        margin-bottom: 6px;
+      }
 
-  </style>
-</head>
+      .lead {
+        color: var(--gris-suave);
+        font-size: 0.95rem;
+        margin-bottom: 18px;
+      }
 
-<body>
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 9px;
+        border-radius: 999px;
+        background: rgba(22, 163, 74, 0.4);
+        color: #bbf7d0;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 10px;
+      }
 
-<header>
-  <h1>🤖 Taller de Robótica con Tinkercad</h1>
-  <h3>Primeros pasos en electrónica, circuitos y pensamiento computacional</h3>
-</header>
+      .card {
+        border-radius: 16px;
+        padding: 16px 16px 14px;
+        background: rgba(15, 23, 42, 0.95);
+        border: 1px solid rgba(30, 64, 175, 0.6);
+        margin-bottom: 18px;
+      }
 
-<nav>
-  <a href="index.html">🏠 Inicio</a>
-  <a href="talleres.html">📚 Talleres</a>
-  <a href="dashboard.html">📊 Dashboard</a>
-  <a href="politica-privacidad.html">🔒 Privacidad</a>
-</nav>
+      .card h2 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+      }
 
-<main>
+      .card p {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 0.93rem;
+        color: var(--gris-suave);
+      }
 
-  <h2>Descripción del Taller</h2>
-  <p>
-    El <strong>Taller de Robótica con Tinkercad</strong> introduce a los estudiantes al mundo de la electrónica básica, 
-    programación por bloques y simulación de circuitos.  
-    Todo desde el navegador, sin descargar software, utilizando la plataforma <strong>Tinkercad Circuits</strong>.
-  </p>
+      ul {
+        padding-left: 18px;
+        font-size: 0.93rem;
+      }
 
-  <h2>Objetivos de Aprendizaje</h2>
-  <ul>
-    <li>Comprender los componentes básicos de un circuito eléctrico.</li>
-    <li>Construir y simular circuitos simples y avanzados en Tinkercad.</li>
-    <li>Programar microcontroladores con bloques y código básico.</li>
-    <li>Aplicar pensamiento lógico y diseño iterativo.</li>
-    <li>Fomentar el trabajo colaborativo y la creatividad STEAM.</li>
-  </ul>
+      li {
+        margin-bottom: 4px;
+      }
 
-  <h2>Módulos del Taller</h2>
-  <ul>
-    <li><strong>Módulo 1:</strong> Introducción a Tinkercad y componentes eléctricos</li>
-    <li><strong>Módulo 2:</strong> Circuitos con LED, resistencias y botones</li>
-    <li><strong>Módulo 3:</strong> Uso de protoboard y sensores</li>
-    <li><strong>Módulo 4:</strong> Primeros pasos con programación por bloques</li>
-    <li><strong>Módulo 5:</strong> Mini–proyecto final (creación libre)</li>
-  </ul>
+      .btn,
+      .btn-secundario {
+        display: inline-block;
+        padding: 10px 18px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        cursor: pointer;
+        border: none;
+      }
 
-  <h2>Recursos del Taller</h2>
-  <p>
-    Accede a la plataforma principal:
-  </p>
+      .btn {
+        background: linear-gradient(135deg, var(--cobre), #d88a4d);
+        color: #000;
+      }
 
-  <p style="text-align:center;">
-    <a href="https://www.tinkercad.com" target="_blank" class="btn">🌐 Abrir Tinkercad Circuits</a>
-  </p>
+      .btn:hover {
+        filter: brightness(1.05);
+        transform: translateY(-1px);
+      }
 
-  <p style="text-align:center;">
-    <a href="talleres.html" class="btn">⬅ Volver a Talleres</a>
-  </p>
+      .btn-secundario {
+        background: transparent;
+        color: var(--cian);
+        border: 1px solid rgba(148, 163, 184, 0.7);
+      }
 
-</main>
+      .btn-secundario:hover {
+        border-color: var(--cian);
+      }
 
-<footer>
-  <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/logo.png?raw=true" alt="Logo Guardianes del Desierto">
-  <p>
-    Desarrollado con ❤️ por <strong>Luis Jofré Pérez</strong> – Escuela Las Canteras, Copiapó 🌵 <br>
-    Guardianes del Desierto © 2025 🦊
-  </p>
-</footer>
+      .btn-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
 
-</body>
+      footer {
+        margin-top: 32px;
+        padding: 18px 16px 22px;
+        border-top: 1px solid rgba(31, 41, 55, 0.9);
+        text-align: center;
+        font-size: 0.83rem;
+        color: var(--gris-suave);
+        background: rgba(8, 12, 18, 0.96);
+      }
+
+      footer span.icon {
+        color: #ef4444;
+      }
+
+      footer span.fox {
+        font-size: 1.1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-logo">🦊</div>
+        <div>
+          Guardianes del Desierto<br>
+          <small style="font-weight: 400; font-size: 0.7rem; color: #9ca3af;">
+            Taller Robótica con Tinkercad
+          </small>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">← Volver al portal</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <span class="badge">Taller online · Estudiantes</span>
+      <h1>Robótica con Tinkercad</h1>
+      <p class="lead">
+        Taller formativo donde los estudiantes podrán experimentar con circuitos,
+        componentes electrónicos y programación básica mediante simulaciones en
+        <strong>Tinkercad</strong>, sin necesidad de contar con materiales físicos.
+      </p>
+
+      <section class="card">
+        <h2>Objetivo del taller</h2>
+        <p>
+          Introducir a los estudiantes al pensamiento computacional y a la robótica
+          educativa, desarrollando habilidades de resolución de problemas mediante
+          proyectos simples y motivadores.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>¿Qué aprenderás?</h2>
+        <ul>
+          <li>Uso básico de Tinkercad como simulador de circuitos.</li>
+          <li>Reconocimiento de componentes electrónicos simples (LED, resistencias, pulsadores).</li>
+          <li>Construcción de circuitos básicos y prueba en simulación.</li>
+          <li>Introducción a la lógica de control y pensamiento paso a paso.</li>
+          <li>Relación entre robótica, creatividad y cuidado del entorno digital.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Requisitos y modalidad</h2>
+        <ul>
+          <li><strong>Modalidad:</strong> online, con sesiones sincrónicas.</li>
+          <li><strong>Participantes:</strong> estudiantes de la Escuela Las Canteras.</li>
+          <li><strong>Requisito:</strong> contar con el correo institucional SLEP habilitado.</li>
+          <li>Conexión a internet y un navegador web actualizado.</li>
+        </ul>
+
+        <div class="btn-row">
+          <a href="https://forms.gle/gc2zXDazj4NLjhKUA" class="btn">
+            Inscribirme al taller
+          </a>
+          <a href="dashboard.html" class="btn-secundario">
+            Registrar mi avance en el Dashboard
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Desarrollado con mucho <span class="icon">❤️</span> por
+      <strong>Luis Jofré Pérez</strong> – Escuela Las Canteras, Copiapó, Atacama 🌵
+      <br>
+      © 2025 Guardianes del Desierto <span class="fox">🦊</span>
+    </footer>
+  </body>
 </html>
