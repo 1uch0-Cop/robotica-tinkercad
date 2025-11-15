@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Taller Seguridad en Familia – Guardianes del Desierto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+      :root {
+        --cobre: #b87333;
+        --cian: #00e5ff;
+        --oscuro: #080c12;
+        --texto: #f9fafb;
+        --gris-suave: #9ca3af;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+        color: var(--texto);
+      }
+
+      a { text-decoration: none; color: inherit; }
+
+      .topbar {
+        width: 100%;
+        padding: 14px 24px;
+        background: rgba(8, 12, 18, 0.9);
+        border-bottom: 1px solid rgba(184, 115, 51, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(10px);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 0.95rem;
+      }
+
+      .brand-logo {
+        width: 32px;
+        height: 32px;
+        border-radius: 999px;
+        border: 2px solid var(--cobre);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+
+      nav {
+        display: flex;
+        gap: 16px;
+        font-size: 0.9rem;
+      }
+
+      nav a {
+        padding: 6px 10px;
+        border-radius: 999px;
+        color: var(--gris-suave);
+      }
+
+      nav a:hover {
+        color: var(--texto);
+        background: rgba(184, 115, 51, 0.15);
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 24px 16px 40px;
+      }
+
+      h1 {
+        font-size: clamp(1.7rem, 3vw, 2.1rem);
+        margin-bottom: 6px;
+      }
+
+      .lead {
+        color: var(--gris-suave);
+        font-size: 0.95rem;
+        margin-bottom: 18px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 9px;
+        border-radius: 999px;
+        background: rgba(180, 83, 9, 0.6);
+        color: #fed7aa;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 10px;
+      }
+
+      .card {
+        border-radius: 16px;
+        padding: 16px 16px 14px;
+        background: rgba(15, 23, 42, 0.95);
+        border: 1px solid rgba(30, 64, 175, 0.6);
+        margin-bottom: 18px;
+      }
+
+      .card h2 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+      }
+
+      .card p {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 0.93rem;
+        color: var(--gris-suave);
+      }
+
+      ul {
+        padding-left: 18px;
+        font-size: 0.93rem;
+      }
+
+      li {
+        margin-bottom: 4px;
+      }
+
+      .btn,
+      .btn-secundario {
+        display: inline-block;
+        padding: 10px 18px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn {
+        background: linear-gradient(135deg, var(--cobre), #d88a4d);
+        color: #000;
+      }
+
+      .btn:hover {
+        filter: brightness(1.05);
+        transform: translateY(-1px);
+      }
+
+      .btn-secundario {
+        background: transparent;
+        color: var(--cian);
+        border: 1px solid rgba(148, 163, 184, 0.7);
+      }
+
+      .btn-secundario:hover {
+        border-color: var(--cian);
+      }
+
+      .btn-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      footer {
+        margin-top: 32px;
+        padding: 18px 16px 22px;
+        border-top: 1px solid rgba(31, 41, 55, 0.9);
+        text-align: center;
+        font-size: 0.83rem;
+        color: var(--gris-suave);
+        background: rgba(8, 12, 18, 0.96);
+      }
+
+      footer span.icon {
+        color: #ef4444;
+      }
+
+      footer span.fox {
+        font-size: 1.1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-logo">🦊</div>
+        <div>
+          Guardianes del Desierto<br>
+          <small style="font-weight: 400, 0.7rem; color: #9ca3af;">
+            Taller Seguridad en familia
+          </small>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">← Volver al portal</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <span class="badge">Familias · Seguridad digital</span>
+      <h1>Seguridad en familia</h1>
+      <p class="lead">
+        Taller orientado a madres, padres y apoderados, que entrega pautas sencillas
+        y concretas para acompañar a los estudiantes en el uso responsable de la
+        tecnología, desde la escuela y el hogar.
+      </p>
+
+      <section class="card">
+        <h2>Propósito del taller</h2>
+        <p>
+          Fortalecer las capacidades de las familias para identificar riesgos en
+          línea, conversar sobre ellos con niñas, niños y adolescentes, y acordar
+          normas claras de uso de dispositivos, juegos y redes sociales.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Temas que abordaremos</h2>
+        <ul>
+          <li>Principales riesgos digitales en el contexto escolar.</li>
+          <li>Uso adecuado de dispositivos y tiempos de conexión.</li>
+          <li>Privacidad, contraseñas y cuidado de la identidad digital.</li>
+          <li>Comunicación familia–escuela ante situaciones de riesgo.</li>
+          <li>Recursos sencillos para seguir aprendiendo en casa.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Información práctica</h2>
+        <ul>
+          <li><strong>Modalidad:</strong> online.</li>
+          <li><strong>Dirigido a:</strong> familias de estudiantes de la Escuela Las Canteras.</li>
+          <li>Se utilizará material adaptado al contexto del establecimiento.</li>
+        </ul>
+
+        <div class="btn-row">
+          <a href="https://forms.gle/yyCvXeWpVTFUZqa76" class="btn">
+            Registrarme en este taller
+          </a>
+          <a href="index.html" class="btn-secundario">
+            Volver al portal Guardianes del Desierto
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Desarrollado con mucho <span class="icon">❤️</span> por
+      <strong>Luis Jofré Pérez</strong> – Escuela Las Canteras, Copiapó, Atacama 🌵
+      <br>
+      © 2025 Guardianes del Desierto <span class="fox">🦊</span>
+    </footer>
+  </body>
+</html>
