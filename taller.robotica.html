@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taller de Robótica con Tinkercad – Guardianes del Desierto</title>
+
+  <style>
+    :root {
+      --cobre: #b87333;
+      --cian: #00ffff;
+      --azul: #0a0f1f;
+      --blanco: #f4f4f4;
+    }
+
+    body {
+      margin: 0;
+      background: var(--azul);
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--blanco);
+    }
+
+    /* HEADER */
+    header {
+      background-image:
+        linear-gradient(rgba(10,15,31,0.7), rgba(10,15,31,0.7)),
+        url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      padding: 3rem 1rem;
+      text-align: center;
+      border-bottom: 3px solid var(--cian);
+    }
+
+    header h1 {
+      color: var(--cian);
+      font-size: 2rem;
+      margin: 0;
+      text-shadow: 0 0 12px rgba(0,255,255,0.4);
+    }
+
+    header h3 {
+      color: var(--blanco);
+      margin-top: 0.5rem;
+      opacity: 0.9;
+    }
+
+    /* NAV */
+    nav {
+      text-align: center;
+      background: rgba(255,255,255,0.05);
+      padding: 0.8rem;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      margin-bottom: 2rem;
+    }
+    nav a {
+      color: var(--cian);
+      margin: 0 1rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    /* MAIN */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,255,255,0.1);
+    }
+
+    h2 {
+      color: var(--cian);
+      margin-top: 2rem;
+    }
+
+    p, li {
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    ul { margin-left: 1.2rem; }
+
+    .btn {
+      display: inline-block;
+      background: var(--cobre);
+      padding: 0.8rem 1.3rem;
+      border-radius: 6px;
+      color: var(--azul);
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+      margin-top: 1rem;
+    }
+    .btn:hover {
+      background: var(--cian);
+      box-shadow: 0 0 10px var(--cian);
+      color: var(--azul);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align:center;
+      padding:1.5rem;
+      font-size:0.9rem;
+      background:rgba(255,255,255,0.05);
+      border-top:1px solid rgba(255,255,255,0.1);
+      margin-top:3rem;
+    }
+    footer img { width:70px; opacity:0.95; }
+    footer span { color:red; }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🤖 Taller de Robótica con Tinkercad</h1>
+  <h3>Primeros pasos en electrónica, circuitos y pensamiento computacional</h3>
+</header>
+
+<nav>
+  <a href="index.html">🏠 Inicio</a>
+  <a href="talleres.html">📚 Talleres</a>
+  <a href="dashboard.html">📊 Dashboard</a>
+  <a href="politica-privacidad.html">🔒 Privacidad</a>
+</nav>
+
+<main>
+
+  <h2>Descripción del Taller</h2>
+  <p>
+    El <strong>Taller de Robótica con Tinkercad</strong> introduce a los estudiantes al mundo de la electrónica básica, 
+    programación por bloques y simulación de circuitos.  
+    Todo desde el navegador, sin descargar software, utilizando la plataforma <strong>Tinkercad Circuits</strong>.
+  </p>
+
+  <h2>Objetivos de Aprendizaje</h2>
+  <ul>
+    <li>Comprender los componentes básicos de un circuito eléctrico.</li>
+    <li>Construir y simular circuitos simples y avanzados en Tinkercad.</li>
+    <li>Programar microcontroladores con bloques y código básico.</li>
+    <li>Aplicar pensamiento lógico y diseño iterativo.</li>
+    <li>Fomentar el trabajo colaborativo y la creatividad STEAM.</li>
+  </ul>
+
+  <h2>Módulos del Taller</h2>
+  <ul>
+    <li><strong>Módulo 1:</strong> Introducción a Tinkercad y componentes eléctricos</li>
+    <li><strong>Módulo 2:</strong> Circuitos con LED, resistencias y botones</li>
+    <li><strong>Módulo 3:</strong> Uso de protoboard y sensores</li>
+    <li><strong>Módulo 4:</strong> Primeros pasos con programación por bloques</li>
+    <li><strong>Módulo 5:</strong> Mini–proyecto final (creación libre)</li>
+  </ul>
+
+  <h2>Recursos del Taller</h2>
+  <p>
+    Accede a la plataforma principal:
+  </p>
+
+  <p style="text-align:center;">
+    <a href="https://www.tinkercad.com" target="_blank" class="btn">🌐 Abrir Tinkercad Circuits</a>
+  </p>
+
+  <p style="text-align:center;">
+    <a href="talleres.html" class="btn">⬅ Volver a Talleres</a>
+  </p>
+
+</main>
+
+<footer>
+  <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/logo.png?raw=true" alt="Logo Guardianes del Desierto">
+  <p>
+    Desarrollado con ❤️ por <strong>Luis Jofré Pérez</strong> – Escuela Las Canteras, Copiapó 🌵 <br>
+    Guardianes del Desierto © 2025 🦊
+  </p>
+</footer>
+
+</body>
+</html>
