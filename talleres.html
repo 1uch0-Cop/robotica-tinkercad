@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Talleres Educativos – Guardianes del Desierto</title>
+
+  <style>
+    :root {
+      --cobre: #b87333;
+      --cian: #00ffff;
+      --azul: #0a0f1f;
+      --blanco: #f4f4f4;
+    }
+    body {
+      margin:0;
+      background:var(--azul);
+      font-family:'Segoe UI',sans-serif;
+      color:var(--blanco);
+    }
+
+    header {
+      background-image:
+        linear-gradient(rgba(10,15,31,0.75), rgba(10,15,31,0.8)),
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80');
+      background-size:cover;
+      padding:3rem 1rem;
+      text-align:center;
+      border-bottom:2px solid var(--cian);
+    }
+
+    header h1 {
+      color:var(--cian);
+      margin:0;
+      font-size:2rem;
+      text-shadow:0 0 12px rgba(0,255,255,0.6);
+    }
+
+    nav {
+      text-align:center;
+      background:rgba(255,255,255,0.05);
+      padding:0.8rem;
+      border-bottom:1px solid rgba(255,255,255,0.2);
+    }
+    nav a {
+      color:var(--cian);
+      margin:0 1rem;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    main {
+      max-width:1100px;
+      margin:2rem auto;
+      padding:1rem;
+    }
+
+    h2 { text-align:center; color:var(--cian); }
+
+    .talleres-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:2rem;
+      margin-top:2rem;
+    }
+
+    .card {
+      background:rgba(255,255,255,0.05);
+      padding:1.5rem;
+      border-radius:12px;
+      text-align:center;
+      box-shadow:0 0 12px rgba(0,255,255,0.2);
+      transition:0.3s;
+    }
+    .card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 0 18px rgba(0,255,255,0.3);
+    }
+    .card img {
+      width:100%;
+      height:150px;
+      object-fit:cover;
+      border-radius:10px;
+      margin-bottom:1rem;
+    }
+
+    .btn {
+      display:inline-block;
+      background:var(--cobre);
+      padding:0.7rem 1.2rem;
+      border-radius:6px;
+      color:var(--azul);
+      font-weight:bold;
+      text-decoration:none;
+      transition:0.3s;
+    }
+    .btn:hover {
+      background:var(--cian);
+      color:var(--azul);
+      box-shadow:0 0 10px var(--cian);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🦊 Guardianes del Desierto</h1>
+  <p>Portal de Talleres Educativos</p>
+</header>
+
+<nav>
+  <a href="index.html">🏠 Inicio</a>
+  <a href="talleres.html">📚 Talleres</a>
+  <a href="dashboard.html">📊 Dashboard</a>
+  <a href="politica-privacidad.html">🔒 Privacidad</a>
+</nav>
+
+<main>
+  <h2>Nuestros Talleres</h2>
+
+  <div class="talleres-grid">
+
+    <!-- Robótica -->
+    <div class="card">
+      <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/Rob%C3%B3tica.jpg?raw=true">
+      <h3>🤖 Robótica con Tinkercad</h3>
+      <p>Aprende circuitos, sensores y programación básica usando Tinkercad Circuits.</p>
+      <a class="btn" href="taller-robotica.html">Ver Taller</a>
+    </div>
+
+    <!-- Seguridad Familiar -->
+    <div class="card">
+      <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/IA.jpg?raw=true">
+      <h3>🏠 Seguridad Digital en Familia</h3>
+      <p>Protege información personal, contraseñas y hábitos digitales saludables.</p>
+      <a class="btn" href="taller-familias.html">Ver Taller</a>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="card">
+      <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/Dashboard.jpg?raw=true">
+      <h3>📊 Dashboard del Estudiante</h3>
+      <p>Panel personal para tus avances, evidencias y recursos del taller.</p>
+      <a class="btn" href="dashboard.html">Abrir Dashboard</a>
+    </div>
+
+    <!-- Sistemas Operativos -->
+    <div class="card">
+      <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/Sistemas%20operativos.jpg?raw=true">
+      <h3>💾 Sistemas Operativos</h3>
+      <p>Instalación y uso de Linux y máquinas virtuales.</p>
+      <a class="btn" href="#" onclick="alert('Este taller estará disponible próximamente.')">Próximamente</a>
+    </div>
+
+    <!-- Programación Web -->
+    <div class="card">
+      <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/Web.jpg?raw=true">
+      <h3>💻 Programación Web</h3>
+      <p>HTML, CSS y JavaScript para crear tus primeras páginas web.</p>
+      <a class="btn" href="#" onclick="alert('Este taller estará disponible próximamente.')">Próximamente</a>
+    </div>
+
+    <!-- CTF Formativo -->
+    <div class="card">
+      <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/Logo_CTF.jpg?raw=true">
+      <h3>🧩 CTF Formativo</h3>
+      <p>Aprende OSINT, lógica y análisis digital sin competencia.</p>
+      <a class="btn" href="#" onclick="alert('Este taller estará disponible próximamente.')">Próximamente</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/logo.png?raw=true"
+       style="width:70px;opacity:0.95;">
+  <p>Desarrollado con ❤️ por <strong>Luis Jofré Pérez</strong> – Escuela Las Canteras 🌵<br>
+    Guardianes del Desierto © 2025 🦊</p>
+</footer>
+
+</body>
+</html>
