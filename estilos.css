@@ -1,0 +1,187 @@
+/* ================================
+   ESTILOS PRINCIPALES – GUARDIANES
+   ================================ */
+
+:root {
+  --cobre: #b87333;
+  --cian: #00ffff;
+  --azul: #0a0f1f;
+  --blanco: #f4f4f4;
+  --gris: #9ca3af;
+}
+
+/* GENERAL -------------------------------------------------- */
+
+body {
+  margin: 0;
+  background: var(--azul);
+  color: var(--blanco);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.center { text-align: center; }
+
+/* HERO ----------------------------------------------------- */
+
+.hero {
+  background-image:
+    linear-gradient(rgba(10,15,31,0.75), rgba(10,15,31,0.75)),
+    url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 1rem;
+  text-align: center;
+  border-bottom: 3px solid var(--cian);
+}
+
+.logo-hero {
+  width: 110px;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.4rem;
+  color: var(--cian);
+  text-shadow: 0 0 12px rgba(0,255,255,0.6);
+}
+
+.hero p {
+  color: var(--gris);
+}
+
+/* NAVBAR (inyectado via JS) ------------------------------- */
+
+nav {
+  text-align: center;
+  background: rgba(255,255,255,0.05);
+  padding: 0.8rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+nav a {
+  color: var(--cian);
+  margin: 0 1rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--blanco);
+  text-shadow: 0 0 6px var(--cian);
+}
+
+/* FOOTER --------------------------------------------------- */
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  background: rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 3rem;
+}
+
+footer img {
+  width: 70px;
+  opacity: 0.95;
+}
+
+footer span {
+  color: red;
+}
+
+/* CONTENEDOR GENERAL -------------------------------------- */
+
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,255,255,0.1);
+}
+
+/* CARDS ---------------------------------------------------- */
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  max-height: 160px;
+}
+
+/* GRID ----------------------------------------------------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* BOTONES -------------------------------------------------- */
+
+.btn {
+  display: inline-block;
+  background: var(--cobre);
+  padding: 0.8rem 1.3rem;
+  border-radius: 6px;
+  color: var(--azul);
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--cian);
+  color: var(--azul);
+  box-shadow: 0 0 10px var(--cian);
+}
+
+/* NEWS CARD ------------------------------------------------ */
+
+.news-card {
+  background: rgba(255,255,255,0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--cian);
+}
+
+.news-img {
+  width: 100%;
+  border-radius: 10px;
+  max-height: 220px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* RESPONSIVE ---------------------------------------------- */
+
+@media (max-width: 600px) {
+  .hero { padding: 3rem 1rem; }
+  .hero h1 { font-size: 1.8rem; }
+  .container {
+    padding: 1rem;
+  }
+  nav a {
+    display: inline-block;
+    margin: 0.5rem;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
