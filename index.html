@@ -2,254 +2,273 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Portal de Talleres – Robótica y Seguridad Digital</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guardianes del Desierto – Portal Educativo</title>
 
   <style>
     :root {
       --cobre: #b87333;
-      --cian: #00e5ff;
-      --oscuro: #080c12;
-      --gris-btn: #4b5563;
+      --cian: #00ffff;
+      --azul: #0a0f1f;
+      --blanco: #f4f4f4;
+      --gris: #9ca3af;
     }
 
     body {
       margin: 0;
-      font-family: system-ui, sans-serif;
-      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
-      color: #f9fafb;
+      background: var(--azul);
+      color: var(--blanco);
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    a { text-decoration: none; }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
+    /* ---------- HEADER (HERO) ---------- */
+    header {
+      background-image: 
+        linear-gradient(rgba(10,15,31,0.75), rgba(10,15,31,0.8)),
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      padding: 4rem 1rem;
       text-align: center;
     }
 
-    /* Logo centrado */
-    .logo {
-      width: 150px;
-      margin: 40px auto 20px;
-      display: block;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 5px;
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
       color: var(--cian);
-      text-shadow: 0 0 12px rgba(0,229,255,0.5);
+      text-shadow: 0 0 12px rgba(0,255,255,0.6);
     }
 
-    p {
-      color: #ddd;
-      font-size: 1.05rem;
+    header p {
+      margin-top: .5rem;
+      color: var(--gris);
     }
 
-    .sub {
-      margin-top: 8px;
-      font-size: 0.95rem;
-      color: #9ca3af;
+    /* ---------- NAVBAR ---------- */
+    nav {
+      text-align:center;
+      background:rgba(255,255,255,0.05);
+      padding:0.8rem;
+      border-bottom:1px solid rgba(255,255,255,0.2);
     }
 
-    /* Botón genérico */
+    nav a {
+      color:var(--cian);
+      margin:0 1rem;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.2s;
+    }
+
+    nav a:hover {
+      color:var(--blanco);
+      text-shadow:0 0 6px var(--cian);
+    }
+
+    /* ---------- MAIN ---------- */
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,255,255,0.1);
+    }
+
+    h2 { 
+      color: var(--cian); 
+      text-align:center; 
+      margin-top:2rem;
+    }
+
     .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      margin: 10px;
-      font-size: 1rem;
-      border-radius: 999px;
-      background: var(--cobre);
-      color: #000;
-      font-weight: 600;
-      transition: 0.2s ease;
+      display:inline-block;
+      background:var(--cobre);
+      padding:0.8rem 1.3rem;
+      border-radius:6px;
+      color:var(--azul);
+      font-weight:bold;
+      text-decoration:none;
+      transition:0.3s;
+      margin-top:1rem;
     }
 
     .btn:hover {
-      background: #d48447;
-      transform: translateY(-2px);
+      background:var(--cian);
+      color:var(--azul);
+      box-shadow:0 0 10px var(--cian);
     }
 
-    .btn-disabled {
-      background: var(--gris-btn);
-      color: #d1d5db;
-      cursor: not-allowed;
-      opacity: 0.7;
-    }
-
-    .btn-disabled:hover {
-      background: var(--gris-btn);
-      transform: none;
-    }
-
-    /* Badges de estado */
-    .badge {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      margin-bottom: 8px;
-    }
-
-    .badge-activo {
-      background: rgba(16, 185, 129, 0.15);
-      color: #6ee7b7;
-      border: 1px solid rgba(16, 185, 129, 0.6);
-    }
-
-    .badge-prox {
-      background: rgba(148, 163, 184, 0.15);
-      color: #e5e7eb;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-    }
-
-    .horario {
-      font-size: 0.95rem;
-      color: #9ca3af;
-      margin: 4px 0 10px;
-    }
-
-    /* Grid de talleres */
-    .seccion-titulo {
-      margin-top: 40px;
-      margin-bottom: 10px;
-      font-size: 1.4rem;
-      color: #e5e7eb;
-    }
-
-    .taller-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 20px;
+    /* ---------- CARDS ---------- */
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      gap:1.5rem;
+      margin-top:1.5rem;
     }
 
     .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 18px 18px 22px;
-      border-radius: 16px;
-      backdrop-filter: blur(4px);
-      text-align: left;
+      background:rgba(255,255,255,0.05);
+      padding:1.5rem;
+      border-radius:12px;
+      box-shadow:0 0 12px rgba(0,255,255,0.1);
     }
 
     .card img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 12px;
+      width:100%;
+      border-radius:10px;
+      max-height:150px;
+      object-fit:cover;
+      margin-bottom:1rem;
     }
 
-    .card h3 {
-      color: var(--cian);
-      margin: 0 0 6px;
-      font-size: 1.2rem;
+    .proximo {
+      opacity:0.5;
+      text-align:center;
     }
 
-    .card p {
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-
+    /* ---------- FOOTER ---------- */
     footer {
-      margin-top: 50px;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #aaa;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align:center;
+      padding:1.5rem;
+      font-size:0.9rem;
+      background:rgba(255,255,255,0.05);
+      border-top:1px solid rgba(255,255,255,0.1);
+      margin-top:3rem;
     }
+
+    footer img { width:70px; opacity:0.95; }
+    footer span { color:red; }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+<!-- ========== HERO ========== -->
+<header>
+  <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/logo.png?raw=true"
+       alt="Logo Guardianes"
+       style="width:110px; margin-bottom:1rem;">
+  <h1>🦊 Guardianes del Desierto</h1>
+  <p>Programa Educativo en Ciberseguridad, Tecnología y Robótica</p>
+</header>
 
-    <!-- LOGO CENTRADO -->
-    <img src="logo.png" alt="Guardianes del Desierto" class="logo">
+<!-- ========== NAVBAR ========== -->
+<nav>
+  <a href="index.html">🏠 Inicio</a>
+  <a href="talleres.html">📚 Talleres</a>
+  <a href="dashboard.html">📊 Dashboard</a>
+  <a href="politica-privacidad.html">🔒 Privacidad</a>
+</nav>
 
-    <h1>Talleres Formativos 2025</h1>
-    <p>Bienvenido al portal oficial de inscripción y seguimiento de los talleres de Robótica y Seguridad Digital de la Escuela Las Canteras.</p>
-    <p class="sub">Actualmente se encuentran habilitados los talleres de <strong>Seguridad en Familia</strong> y <strong>Robótica con Tinkercad</strong>.</p>
+<!-- ========== CONTENIDO PRINCIPAL ========== -->
+<main>
 
-    <!-- BOTÓN A DASHBOARD -->
-    <a href="dashboard.html" class="btn">Acceder al Dashboard</a>
+  <!-- Bienvenida -->
+  <h2>Bienvenido al Portal Educativo</h2>
+  <p style="text-align:center;">
+    Este espacio reúne talleres, recursos y actividades para estudiantes del SLEP Atacama, 
+    fomentando innovación, creatividad y una cultura digital segura.
+  </p>
 
-    <!-- TALLERES ACTIVOS -->
-    <h2 class="seccion-titulo">Talleres activos</h2>
+  <p style="text-align:center;">
+    <a class="btn" href="talleres.html">Explorar Talleres</a>
+  </p>
 
-    <div class="taller-grid">
+  <!-- ==========================
+       TALLERES ACTIVOS
+  =========================== -->
+  <h2>Talleres Activos</h2>
 
-      <!-- Seguridad en Familia - ACTIVO -->
-      <div class="card">
-        <span class="badge badge-activo">Activo</span>
-        <img src="seguridad.jpg" alt="Seguridad Digital en Familia">
-        <h3>Seguridad Digital en Familia</h3>
-        <p class="horario">Jueves · 17:00 hrs · Modalidad online</p>
-        <p>
-          Espacio formativo para estudiantes y sus familias, donde se abordan buenas prácticas de
-          autocuidado digital, uso seguro de redes sociales y herramientas para acompañar a niños,
-          niñas y adolescentes en entornos conectados.
-        </p>
-        <a href="https://forms.gle/yyCvXeWpVTFUZqa76" class="btn">Inscribirse</a>
-      </div>
+  <div class="grid">
 
-      <!-- Robótica con Tinkercad - ACTIVO -->
-      <div class="card">
-        <span class="badge badge-activo">Activo</span>
-        <img src="robotica.jpg" alt="Taller de Robótica con Tinkercad">
-        <h3>Robótica con Tinkercad</h3>
-        <p class="horario">Viernes · 17:00 hrs · Modalidad online</p>
-        <p>
-          Taller introductorio a la robótica y electrónica básica mediante simulaciones en Tinkercad.
-          Los estudiantes experimentan con circuitos, sensores y componentes, desarrollando
-          pensamiento lógico y habilidades para futuros proyectos con hardware real.
-        </p>
-        <a href="https://forms.gle/gc2zXDazj4NLjhKUA" class="btn">Inscribirse</a>
-      </div>
-
+    <!-- Seguridad en Familia -->
+    <div class="card">
+      <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/IA.jpg?raw=true">
+      <h3 style="color:var(--cian);">🏠 Seguridad Digital en Familia</h3>
+      <p style="color:var(--gris);">Jueves · 17:00 hrs · Online</p>
+      <p>Aprende hábitos seguros en redes sociales, privacidad y acompañamiento digital desde el hogar.</p>
+      <a href="https://forms.gle/yyCvXeWpVTFUZqa76" class="btn">Inscribirme</a>
     </div>
 
-    <!-- OTROS TALLERES (PRÓXIMAMENTE) -->
-    <h2 class="seccion-titulo">Otros talleres (próximamente)</h2>
-
-    <div class="taller-grid">
-
-      <div class="card">
-        <span class="badge badge-prox">Próximamente</span>
-        <h3>Introducción a la Programación Creativa</h3>
-        <p class="horario">Horario por definir</p>
-        <p>
-          Taller orientado a despertar la creatividad mediante programación visual y pequeños retos.
-          Ideal como continuidad para quienes se inician en robótica y pensamiento computacional.
-        </p>
-        <a class="btn btn-disabled">Inscripciones no disponibles</a>
-      </div>
-
-      <div class="card">
-        <span class="badge badge-prox">Próximamente</span>
-        <h3>Ciberseguridad para Estudiantes</h3>
-        <p class="horario">Horario por definir</p>
-        <p>
-          Espacio para conocer amenazas digitales frecuentes en el entorno escolar, reconocer
-          fraudes, fortalecer contraseñas y comprender la importancia de ser ciudadanos digitales
-          responsables.
-        </p>
-        <a class="btn btn-disabled">Inscripciones no disponibles</a>
-      </div>
-
+    <!-- Robótica con Tinkercad -->
+    <div class="card">
+      <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/Rob%C3%B3tica.jpg?raw=true">
+      <h3 style="color:var(--cian);">🤖 Robótica con Tinkercad</h3>
+      <p style="color:var(--gris);">Viernes · 17:00 hrs · Online</p>
+      <p>Aprende electrónica básica, simulación y programación de circuitos desde cero.</p>
+      <a href="https://forms.gle/gc2zXDazj4NLjhKUA" class="btn">Inscribirme</a>
     </div>
-
-    <footer>
-      Desarrollado con mucho ❤️ por Luis Jofré Pérez – Escuela Las Canteras, Copiapó, Atacama 🌵 <br>
-      © 2025 Guardianes del Desierto 🦊
-    </footer>
 
   </div>
+
+  <!-- ==========================
+       PRÓXIMAMENTE
+  =========================== -->
+  <h2>Próximamente</h2>
+
+  <div class="grid">
+
+    <div class="card proximo">
+      <h3 style="color:var(--gris);">💾 Sistemas Operativos</h3>
+      <p>Próximamente</p>
+      <a class="btn" style="background:#333;color:#777;cursor:not-allowed;">No disponible</a>
+    </div>
+
+    <div class="card proximo">
+      <h3 style="color:var(--gris);">💻 Programación Web</h3>
+      <p>Próximamente</p>
+      <a class="btn" style="background:#333;color:#777;cursor:not-allowed;">No disponible</a>
+    </div>
+
+    <div class="card proximo">
+      <h3 style="color:var(--gris);">🧩 CTF Formativo</h3>
+      <p>Próximamente</p>
+      <a class="btn" style="background:#333;color:#777;cursor:not-allowed;">No disponible</a>
+    </div>
+
+  </div>
+
+  <!-- ==========================
+       DASHBOARD
+  =========================== -->
+  <h2>📊 Dashboard del Estudiante</h2>
+  <p style="text-align:center;">
+    Guarda tu avance, sube evidencias y accede a tus recursos del taller.
+  </p>
+
+  <p style="text-align:center;">
+    <a href="dashboard.html" class="btn">Ingresar al Dashboard</a>
+  </p>
+
+  <!-- ==========================
+       NOTICIAS
+  =========================== -->
+  <h2>📰 Noticias Recientes</h2>
+
+  <div class="card" style="border-left:4px solid var(--cian);">
+    <img src="https://slepatacama.cl/wp-content/uploads/2025/11/DSC_0057-1024x683.jpg"
+         style="max-height:220px;object-fit:cover;">
+    <h3 style="color:var(--cian);">Escuela Las Canteras impulsa la cultura de seguridad informática</h3>
+    <p>
+      El primer CTF Escolar “Atrapa la Bandera Digital” reunió a estudiantes
+      motivados en desafíos de ciberseguridad, OSINT, lógica y análisis digital.
+    </p>
+    <a href="https://slepatacama.cl/escuela-las-canteras-impulsa-la-cultura-de-seguridad-informatica-con-concurso-escolar-atrapa-la-bandera-digital/"
+       target="_blank"
+       class="btn">Leer noticia completa</a>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/logo.png?raw=true">
+  <p>
+    Desarrollado con <span>❤️</span> por <strong>Luis Jofré Pérez</strong> – Escuela Las Canteras 🌵 <br>
+    Guardianes del Desierto © 2025 🦊
+  </p>
+</footer>
 
 </body>
 </html>
