@@ -5,270 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Guardianes del Desierto – Portal Educativo</title>
 
-  <style>
-    :root {
-      --cobre: #b87333;
-      --cian: #00ffff;
-      --azul: #0a0f1f;
-      --blanco: #f4f4f4;
-      --gris: #9ca3af;
-    }
+  <!-- Estilos -->
+  <link rel="stylesheet" href="assets/estilos.css">
 
-    body {
-      margin: 0;
-      background: var(--azul);
-      color: var(--blanco);
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    /* ---------- HEADER (HERO) ---------- */
-    header {
-      background-image: 
-        linear-gradient(rgba(10,15,31,0.75), rgba(10,15,31,0.8)),
-        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80');
-      background-size: cover;
-      background-position: center;
-      padding: 4rem 1rem;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.4rem;
-      color: var(--cian);
-      text-shadow: 0 0 12px rgba(0,255,255,0.6);
-    }
-
-    header p {
-      margin-top: .5rem;
-      color: var(--gris);
-    }
-
-    /* ---------- NAVBAR ---------- */
-    nav {
-      text-align:center;
-      background:rgba(255,255,255,0.05);
-      padding:0.8rem;
-      border-bottom:1px solid rgba(255,255,255,0.2);
-    }
-
-    nav a {
-      color:var(--cian);
-      margin:0 1rem;
-      text-decoration:none;
-      font-weight:bold;
-      transition:0.2s;
-    }
-
-    nav a:hover {
-      color:var(--blanco);
-      text-shadow:0 0 6px var(--cian);
-    }
-
-    /* ---------- MAIN ---------- */
-    main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 1rem 2rem;
-      background: rgba(255,255,255,0.05);
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,255,255,0.1);
-    }
-
-    h2 { 
-      color: var(--cian); 
-      text-align:center; 
-      margin-top:2rem;
-    }
-
-    .btn {
-      display:inline-block;
-      background:var(--cobre);
-      padding:0.8rem 1.3rem;
-      border-radius:6px;
-      color:var(--azul);
-      font-weight:bold;
-      text-decoration:none;
-      transition:0.3s;
-      margin-top:1rem;
-    }
-
-    .btn:hover {
-      background:var(--cian);
-      color:var(--azul);
-      box-shadow:0 0 10px var(--cian);
-    }
-
-    /* ---------- CARDS ---------- */
-    .grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-      gap:1.5rem;
-      margin-top:1.5rem;
-    }
-
-    .card {
-      background:rgba(255,255,255,0.05);
-      padding:1.5rem;
-      border-radius:12px;
-      box-shadow:0 0 12px rgba(0,255,255,0.1);
-    }
-
-    .card img {
-      width:100%;
-      border-radius:10px;
-      max-height:150px;
-      object-fit:cover;
-      margin-bottom:1rem;
-    }
-
-    .proximo {
-      opacity:0.5;
-      text-align:center;
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      text-align:center;
-      padding:1.5rem;
-      font-size:0.9rem;
-      background:rgba(255,255,255,0.05);
-      border-top:1px solid rgba(255,255,255,0.1);
-      margin-top:3rem;
-    }
-
-    footer img { width:70px; opacity:0.95; }
-    footer span { color:red; }
-  </style>
+  <!-- Navbar y Footer -->
+  <script src="assets/navbar.js" defer></script>
+  <script src="assets/footer.js" defer></script>
 </head>
 
 <body>
 
-<!-- ========== HERO ========== -->
-<header>
-  <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/logo.png?raw=true"
-       alt="Logo Guardianes"
-       style="width:110px; margin-bottom:1rem;">
+<!-- NAV INYECTADO -->
+<div id="navbar"></div>
+
+<header class="hero">
+  <img src="assets/logo.webp" alt="Logo Guardianes" class="logo-hero">
   <h1>🦊 Guardianes del Desierto</h1>
   <p>Programa Educativo en Ciberseguridad, Tecnología y Robótica</p>
 </header>
 
-<!-- ========== NAVBAR ========== -->
-<nav>
-  <a href="index.html">🏠 Inicio</a>
-  <a href="talleres.html">📚 Talleres</a>
-  <a href="dashboard.html">📊 Dashboard</a>
-  <a href="politica-privacidad.html">🔒 Privacidad</a>
-</nav>
+<main class="container">
 
-<!-- ========== CONTENIDO PRINCIPAL ========== -->
-<main>
-
-  <!-- Bienvenida -->
-  <h2>Bienvenido al Portal Educativo</h2>
-  <p style="text-align:center;">
-    Este espacio reúne talleres, recursos y actividades para estudiantes del SLEP Atacama, 
-    fomentando innovación, creatividad y una cultura digital segura.
+  <h2 class="center">Bienvenido al Portal Educativo</h2>
+  <p>
+    Este espacio reúne talleres, recursos y actividades diseñadas para estudiantes del SLEP Atacama,
+    fomentando la innovación, la creatividad y la cultura digital segura.
   </p>
 
-  <p style="text-align:center;">
+  <p class="center">
     <a class="btn" href="talleres.html">Explorar Talleres</a>
   </p>
 
-  <!-- ==========================
-       TALLERES ACTIVOS
-  =========================== -->
-  <h2>Talleres Activos</h2>
-
-  <div class="grid">
-
-    <!-- Seguridad en Familia -->
-    <div class="card">
-      <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/IA.jpg?raw=true">
-      <h3 style="color:var(--cian);">🏠 Seguridad Digital en Familia</h3>
-      <p style="color:var(--gris);">Jueves · 17:00 hrs · Online</p>
-      <p>Aprende hábitos seguros en redes sociales, privacidad y acompañamiento digital desde el hogar.</p>
-      <a href="https://forms.gle/yyCvXeWpVTFUZqa76" class="btn">Inscribirme</a>
-    </div>
-
-    <!-- Robótica con Tinkercad -->
-    <div class="card">
-      <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/Rob%C3%B3tica.jpg?raw=true">
-      <h3 style="color:var(--cian);">🤖 Robótica con Tinkercad</h3>
-      <p style="color:var(--gris);">Viernes · 17:00 hrs · Online</p>
-      <p>Aprende electrónica básica, simulación y programación de circuitos desde cero.</p>
-      <a href="https://forms.gle/gc2zXDazj4NLjhKUA" class="btn">Inscribirme</a>
-    </div>
-
-  </div>
-
-  <!-- ==========================
-       PRÓXIMAMENTE
-  =========================== -->
-  <h2>Próximamente</h2>
-
-  <div class="grid">
-
-    <div class="card proximo">
-      <h3 style="color:var(--gris);">💾 Sistemas Operativos</h3>
-      <p>Próximamente</p>
-      <a class="btn" style="background:#333;color:#777;cursor:not-allowed;">No disponible</a>
-    </div>
-
-    <div class="card proximo">
-      <h3 style="color:var(--gris);">💻 Programación Web</h3>
-      <p>Próximamente</p>
-      <a class="btn" style="background:#333;color:#777;cursor:not-allowed;">No disponible</a>
-    </div>
-
-    <div class="card proximo">
-      <h3 style="color:var(--gris);">🧩 CTF Formativo</h3>
-      <p>Próximamente</p>
-      <a class="btn" style="background:#333;color:#777;cursor:not-allowed;">No disponible</a>
-    </div>
-
-  </div>
-
-  <!-- ==========================
-       DASHBOARD
-  =========================== -->
-  <h2>📊 Dashboard del Estudiante</h2>
-  <p style="text-align:center;">
-    Guarda tu avance, sube evidencias y accede a tus recursos del taller.
-  </p>
-
-  <p style="text-align:center;">
-    <a href="dashboard.html" class="btn">Ingresar al Dashboard</a>
-  </p>
-
-  <!-- ==========================
-       NOTICIAS
-  =========================== -->
-  <h2>📰 Noticias Recientes</h2>
-
-  <div class="card" style="border-left:4px solid var(--cian);">
-    <img src="https://slepatacama.cl/wp-content/uploads/2025/11/DSC_0057-1024x683.jpg"
-         style="max-height:220px;object-fit:cover;">
-    <h3 style="color:var(--cian);">Escuela Las Canteras impulsa la cultura de seguridad informática</h3>
+  <section class="card">
+    <h2>📊 Dashboard del Estudiante</h2>
     <p>
-      El primer CTF Escolar “Atrapa la Bandera Digital” reunió a estudiantes
-      motivados en desafíos de ciberseguridad, OSINT, lógica y análisis digital.
+      Accede a tu panel personal de aprendizaje: guarda tu avance, sube evidencias y consulta recursos
+      exclusivos del taller de Robótica con Tinkercad.
     </p>
-    <a href="https://slepatacama.cl/escuela-las-canteras-impulsa-la-cultura-de-seguridad-informatica-con-concurso-escolar-atrapa-la-bandera-digital/"
-       target="_blank"
-       class="btn">Leer noticia completa</a>
-  </div>
+    <p class="center">
+      <a href="dashboard.html" class="btn">Ingresar al Dashboard</a>
+    </p>
+  </section>
+
+  <section class="news">
+    <h2>📰 Noticias Recientes</h2>
+
+    <div class="news-card">
+      <img src="assets/ia.webp" class="news-img">
+      <h3>Escuela Las Canteras impulsa la seguridad informática</h3>
+      <p>
+        Durante octubre se desarrolló el primer CTF Escolar “Atrapa la Bandera Digital”, donde estudiantes
+        demostraron habilidades en OSINT, lógica y ciberseguridad.
+      </p>
+
+      <p>
+        <a href="https://slepatacama.cl/escuela-las-canteras-impulsa-la-cultura-de-seguridad-informatica-con-concurso-escolar-atrapa-la-bandera-digital/"
+           target="_blank" class="btn">Leer noticia completa</a>
+      </p>
+    </div>
+  </section>
 
 </main>
 
-<!-- ========== FOOTER ========== -->
-<footer>
-  <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/logo.png?raw=true">
-  <p>
-    Desarrollado con <span>❤️</span> por <strong>Luis Jofré Pérez</strong> – Escuela Las Canteras 🌵 <br>
-    Guardianes del Desierto © 2025 🦊
-  </p>
-</footer>
+<!-- FOOTER INYECTADO -->
+<div id="footer"></div>
 
 </body>
 </html>
