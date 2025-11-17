@@ -5,21 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Guardianes del Desierto – Portal Educativo</title>
 
+  <!-- SEO básico -->
+  <meta name="description" content="Portal educativo de los Guardianes del Desierto: talleres, recursos y actividades de ciberseguridad, tecnología y robótica para estudiantes del SLEP Atacama.">
+
   <!-- Estilos -->
   <link rel="stylesheet" href="assets/estilos.css">
 
-  <!-- Navbar y Footer -->
+  <!-- Navbar y Footer (inyectados por JS) -->
   <script src="assets/navbar.js" defer></script>
   <script src="assets/footer.js" defer></script>
 </head>
 
 <body>
 
-<!-- NAV INYECTADO -->
+<!-- NAV -->
 <div id="navbar"></div>
 
 <header class="hero">
-  <img src="assets/logo.png" alt="Logo Guardianes" class="logo-hero">
+  <img src="assets/logo.png" alt="Logo Guardianes del Desierto" class="logo-hero">
   <h1>🦊 Guardianes del Desierto</h1>
   <p>Programa Educativo en Ciberseguridad, Tecnología y Robótica</p>
 </header>
@@ -51,7 +54,7 @@
     <h2>📰 Noticias Recientes</h2>
 
     <div class="news-card">
-      <img src="assets/ia.webp" class="news-img">
+      <img src="assets/ia.webp" class="news-img" alt="Inteligencia Artificial en la educación">
       <h3>Escuela Las Canteras impulsa la seguridad informática</h3>
       <p>
         Durante octubre se desarrolló el primer CTF Escolar “Atrapa la Bandera Digital”, donde estudiantes
@@ -60,14 +63,14 @@
 
       <p>
         <a href="https://slepatacama.cl/escuela-las-canteras-impulsa-la-cultura-de-seguridad-informatica-con-concurso-escolar-atrapa-la-bandera-digital/"
-           target="_blank" class="btn">Leer noticia completa</a>
+           target="_blank" class="btn" rel="noopener noreferrer">Leer noticia completa</a>
       </p>
     </div>
   </section>
 
 </main>
 
-<!-- FOOTER INYECTADO -->
+<!-- FOOTER -->
 <div id="footer"></div>
 
 </body>
