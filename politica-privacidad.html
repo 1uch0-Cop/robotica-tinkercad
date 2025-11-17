@@ -5,129 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Política de Privacidad – Guardianes del Desierto</title>
 
+  <!-- SEO -->
+  <meta name="description" content="Política de privacidad del portal educativo Guardianes del Desierto. Información sobre el tratamiento de datos, finalidad, resguardo y derechos de los estudiantes.">
+
+  <!-- Estilos globales -->
+  <link rel="stylesheet" href="assets/estilos.css">
+
+  <!-- Navbar & Footer -->
+  <script src="assets/navbar.js" defer></script>
+  <script src="assets/footer.js" defer></script>
+
   <style>
-    :root{
-      --cobre:#b87333;
-      --cian:#00ffff;
-      --azul:#0a0f1f;
-      --blanco:#f4f4f4;
+    .priv-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,255,255,0.12);
     }
-    body{
-      margin:0;
-      background:var(--azul);
-      color:var(--blanco);
-      font-family:'Segoe UI',sans-serif;
+    .priv-container h2 {
+      color: var(--cian);
+      margin-top: 1.6rem;
     }
-    header{
-      background-image:
-        linear-gradient(rgba(10,15,31,0.75),rgba(10,15,31,0.8)),
-        url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1500&q=80');
-      background-size:cover;
-      text-align:center;
-      padding:3rem 1rem;
-      border-bottom:3px solid var(--cian);
-    }
-    header h1{
-      color:var(--cian);
-      margin:0;
-      font-size:2rem;
-      text-shadow:0 0 10px rgba(0,255,255,0.5);
-    }
-    nav{
-      text-align:center;
-      background:rgba(255,255,255,0.05);
-      padding:0.8rem;
-      border-bottom:1px solid rgba(255,255,255,0.2);
-      margin-bottom:2rem;
-    }
-    nav a{
-      color:var(--cian);
-      margin:0 1rem;
-      text-decoration:none;
-      font-weight:bold;
-    }
-    main{
-      max-width:900px;
-      margin:0 auto;
-      padding:2rem;
-      background:rgba(255,255,255,0.05);
-      border-radius:12px;
-    }
-    h2{ color:var(--cian); }
-    footer{
-      text-align:center;
-      padding:1.5rem;
-      font-size:0.9rem;
-      background:rgba(255,255,255,0.05);
-      border-top:1px solid rgba(255,255,255,0.1);
-      margin-top:3rem;
-    }
-    footer span{color:red;}
   </style>
 </head>
 
 <body>
 
-<header>
+<!-- NAV -->
+<div id="navbar"></div>
+
+<header class="hero">
+  <img src="assets/logo.png" alt="Logo Guardianes del Desierto" class="logo-hero">
   <h1>Política de Privacidad</h1>
+  <p>Compromiso con la protección y el uso responsable de los datos</p>
 </header>
 
-<nav>
-  <a href="index.html">🏠 Inicio</a>
-  <a href="talleres.html">📚 Talleres</a>
-  <a href="dashboard.html">📊 Dashboard</a>
-  <a href="politica-privacidad.html">🔒 Privacidad</a>
-</nav>
-
-<main>
+<main class="priv-container">
 
   <h2>1. Finalidad del tratamiento de datos</h2>
   <p>
-    Este portal recopila datos exclusivamente con fines educativos, formativos y de participación en actividades de Ciberseguridad, Robótica y Cultura Digital, desarrolladas por la Escuela Las Canteras bajo el SLEP Atacama.
+    El portal recopila datos exclusivamente con fines educativos, formativos y de participación en actividades de
+    Ciberseguridad, Robótica y Cultura Digital, desarrolladas por la Escuela Las Canteras bajo el SLEP Atacama.
   </p>
 
   <h2>2. Datos recopilados</h2>
   <ul>
     <li>Nombre y apellidos</li>
-    <li>Correo institucional</li>
-    <li>Curso y escuela</li>
-    <li>Evidencias subidas por el estudiante</li>
+    <li>Correo institucional SLEP</li>
+    <li>Curso y establecimiento</li>
+    <li>Evidencias y registros ingresados por el estudiante</li>
   </ul>
 
-  <h2>3. Uso y resguardo de información</h2>
+  <h2>3. Uso y resguardo de la información</h2>
   <p>
-    Toda la información se utiliza solo con fines educativos y no se comparte con terceros.  
-    Ningún dato se almacena en servidores externos: toda la información se guarda únicamente en el navegador del estudiante.
+    Toda la información recopilada mediante el Dashboard se utiliza únicamente con fines pedagógicos
+    y no se comparte con terceros.
+  </p>
+  <p>
+    <strong>No se realiza almacenamiento en servidores externos</strong>:  
+    todos los datos ingresados por el estudiante son guardados localmente en el navegador del
+    dispositivo mediante almacenamiento interno (<em>localStorage</em>).
+  </p>
+  <p>
+    Esto significa que la información es accesible solo desde el dispositivo donde fue registrada
+    y puede ser eliminada en cualquier momento por el propio usuario.
   </p>
 
   <h2>4. Base legal</h2>
   <p>
-    Ley Nº 19.628 sobre Protección de la Vida Privada y lineamientos éticos del programa Guardianes del Desierto.
+    El tratamiento de datos se rige por la Ley Nº 19.628 sobre Protección de la Vida Privada,
+    junto con los lineamientos éticos del programa Guardianes del Desierto y las normativas
+    del SLEP Atacama.
   </p>
 
   <h2>5. Derechos ARCO</h2>
   <p>
-    Puedes solicitar acceso, rectificación o eliminación escribiendo a  
-    <a href="mailto:luis.jofre@slepatacama.cl" style="color:var(--cian);">luis.jofre@slepatacama.cl</a>.
+    Puedes solicitar acceso, rectificación o eliminación de tu información escribiendo a  
+    <a href="mailto:luis.jofre@slepatacama.cl" style="color:var(--cian);">
+      luis.jofre@slepatacama.cl
+    </a>.
   </p>
 
-  <h2>6. Actualización</h2>
+  <h2>6. Actualización de esta política</h2>
   <p>
-    Esta política puede actualizarse según nuevas disposiciones legales o mejoras del portal.
+    La presente política puede actualizarse para incorporar nuevas disposiciones legales,
+    mejoras técnicas o cambios en los talleres del programa.
   </p>
 
-  <p style="text-align:center;margin-top:2rem;">
+  <p class="center" style="margin-top: 2rem;">
     <a href="index.html" class="btn">⬅ Volver al inicio</a>
   </p>
 
 </main>
 
-<footer>
-  <img src="https://github.com/1uch0-Cop/taller-robotica-assets/blob/main/logo.png?raw=true"
-       style="width:70px;opacity:0.95;">
-  <p>Desarrollado con ❤️ por <strong>Luis Jofré Pérez</strong> – Escuela Las Canteras 🌵<br>
-  Guardianes del Desierto © 2025 🦊</p>
-</footer>
+<!-- FOOTER -->
+<div id="footer"></div>
 
 </body>
 </html>
