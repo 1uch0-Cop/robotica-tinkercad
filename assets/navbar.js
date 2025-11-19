@@ -1,8 +1,8 @@
 document.getElementById("navbar").innerHTML = `
 <nav class="nav-container">
-  <a href="/robotica-tinkercad/index.html">🏠 Inicio</a>
-  <a href="/robotica-tinkercad/talleres.html">📚 Talleres</a>
-  <a href="/robotica-tinkercad/dashboard.html">📊 Dashboard</a>
-  <a href="/robotica-tinkercad/politica-privacidad.html">🔒 Privacidad</a>
+  <a href="index.html">🏠 Inicio</a>
+  <a href="talleres.html">📚 Talleres</a>
+  <a href="dashboard.html">📊 Dashboard</a>
+  <a href="politica-privacidad.html">🔒 Privacidad</a>
 </nav>
 `;
