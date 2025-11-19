@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Talleres – Guardianes del Desierto</title>
 
   <!-- SEO -->
-  <meta name="description" content="Explora los talleres disponibles del programa Guardianes del Desierto: seguridad digital, robótica con Tinkercad y más.">
+  <meta name="description"
+    content="Explora los talleres del programa Guardianes del Desierto: seguridad digital, robótica, CTF y más.">
 
   <!-- Estilos -->
   <link rel="stylesheet" href="assets/estilos.css">
@@ -18,65 +20,80 @@
 
 <body>
 
-<!-- NAV -->
-<div id="navbar"></div>
+  <!-- NAV -->
+  <div id="navbar"></div>
 
-<header class="hero">
-  <img src="assets/logo.png" alt="Logo Guardianes del Desierto" class="logo-hero">
-  <h1>📚 Talleres Educativos</h1>
-  <p>Programa Guardianes del Desierto – Escuela Las Canteras</p>
-</header>
+  <!-- HERO -->
+  <header class="hero">
+    <img src="assets/logo.png" alt="Logo Guardianes del Desierto" class="logo-hero">
+    <h1>📚 Talleres Educativos</h1>
+    <p>Aprendizaje práctico · Creatividad · Cultura Digital Segura</p>
+  </header>
 
-<main class="container">
+  <!-- CONTENIDO -->
+  <main class="container">
 
-  <h2 class="center">Talleres Activos</h2>
+    <section class="center">
+      <h2>Talleres Activos</h2>
+    </section>
 
-  <div class="grid">
+    <div class="talleres-grid">
 
-    <!-- Taller Seguridad en Familia -->
-    <div class="card">
-      <img src="assets/familia.webp" class="card-img" alt="Seguridad digital en familia">
-      <h3>🏠 Seguridad Digital en Familia</h3>
-      <p class="horario">Jueves · 17:00 hrs · Online</p>
-      <p>Taller práctico sobre autocuidado digital, privacidad, redes sociales y bienestar digital.</p>
-      <a class="btn" href="taller-familias.html">Ver Taller</a>
+      <!-- Seguridad en Familia -->
+      <div class="card">
+        <img src="assets/familia.webp" alt="Seguridad Digital en Familia" class="card-img">
+        <h3>🏠 Seguridad Digital en Familia</h3>
+        <p class="horario">Jueves · 17:00 hrs · Online</p>
+        <p>
+          Taller práctico para aprender sobre autocuidado digital, privacidad y bienestar tecnológico
+          en redes sociales y vida diaria.
+        </p>
+        <a href="taller-familias.html" class="btn">Ver Taller</a>
+      </div>
+
+      <!-- Robótica -->
+      <div class="card">
+        <img src="assets/robotica.webp" alt="Robótica con Tinkercad" class="card-img">
+        <h3>🤖 Robótica con Tinkercad</h3>
+        <p class="horario">Viernes · 17:00 hrs · Online</p>
+        <p>
+          Aprende electrónica básica, circuitos y programación en un entorno virtual seguro y accesible.
+        </p>
+        <a href="taller.robotica.html" class="btn">Ver Taller</a>
+      </div>
+
     </div>
 
-    <!-- Taller Robótica -->
-    <div class="card">
-      <img src="assets/robotica.webp" class="card-img" alt="Taller de Robótica con Tinkercad">
-      <h3>🤖 Robótica con Tinkercad</h3>
-      <p class="horario">Viernes · 17:00 hrs · Online</p>
-      <p>Construcción de circuitos electrónicos, simulación y programación básica.</p>
-      <a class="btn" href="taller.robotica.html">Ver Taller</a>
+    <!-- Próximamente -->
+    <section class="center">
+      <h2>Próximamente</h2>
+    </section>
+
+    <div class="talleres-grid">
+
+      <div class="card inactive">
+        <img src="assets/sistemas.webp" alt="Taller de Sistemas Operativos" class="card-img">
+        <h3>💾 Sistemas Operativos</h3>
+        <p class="horario">Fecha por definir</p>
+        <p>Instalación, manejo y administración de sistemas Linux y Windows.</p>
+        <a class="btn inactive-button">Pronto Disponible</a>
+      </div>
+
+      <div class="card inactive">
+        <img src="assets/ctf_formacion.webp" alt="Taller CTF Formativo" class="card-img">
+        <h3>🧩 Taller CTF Formativo</h3>
+        <p class="horario">Fecha por definir</p>
+        <p>Desafíos de lógica, OSINT y ciberseguridad en un entorno educativo guiado.</p>
+        <a class="btn inactive-button">Pronto Disponible</a>
+      </div>
+
     </div>
 
-  </div>
+  </main>
 
-  <h2 class="center">Próximamente</h2>
-
-  <div class="grid">
-
-    <!-- Sistemas Operativos -->
-    <div class="card disabled">
-      <img src="assets/sistemas.webp" class="card-img" alt="Taller de sistemas operativos">
-      <h3>💾 Sistemas Operativos</h3>
-      <p class="horario">Fecha por definir</p>
-    </div>
-
-    <!-- CTF Formativo -->
-    <div class="card disabled">
-      <img src="assets/ctf_formacion.webp" class="card-img" alt="Taller CTF para estudiantes">
-      <h3>🧩 Taller CTF Formativo</h3>
-      <p class="horario">Fecha por definir</p>
-    </div>
-
-  </div>
-
-</main>
-
-<!-- FOOTER -->
-<div id="footer"></div>
+  <!-- FOOTER -->
+  <div id="footer"></div>
 
 </body>
+
 </html>
