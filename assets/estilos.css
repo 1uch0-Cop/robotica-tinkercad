@@ -193,73 +193,68 @@ footer img {
 }
 
 /* ==========================================================
-   TALLERES – GRILLA
+   TALLERES – Grilla fija 3x3 (pro)
 ========================================================== */
 .talleres-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 28px;
   margin-top: 25px;
 }
 
-/* ==========================================================
-   TALLERES – TARJETAS MODERNAS
-========================================================== */
-.talleres-grid .card {
-  background: radial-gradient(circle at top left,
-      rgba(148,163,184,0.12),
-      rgba(15,23,42,0.92));
-  border-radius: 16px;
-  padding: 22px;
-  border: 1px solid rgba(31,41,55,0.85);
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(15,23,42,0.6);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+/* 2 columnas para tablets */
+@media (max-width: 1024px) {
+  .talleres-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.talleres-grid .card:hover:not(.inactive) {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(0,229,255,0.2);
-}
-
-/* ==========================================================
-   TALLERES – IMÁGENES (tamaño DEFINITIVO)
-========================================================== */
-.talleres-grid .card-img {
-  width: 100%;
-  height: 160px !important;
-  max-height: 160px !important;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 14px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
-  border: 1px solid rgba(148,163,184,0.3);
-}
-
-@media (max-width: 768px) {
-  .talleres-grid .card-img {
-    height: 140px !important;
-    max-height: 140px !important;
+/* 1 columna para celulares */
+@media (max-width: 600px) {
+  .talleres-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 /* ==========================================================
-   TALLERES – TEXTO
+   TALLERES – Fotos uniformes (150px)
 ========================================================== */
-.horario {
-  font-size: 0.9rem;
-  font-weight: 600;
-  opacity: 0.85;
-  margin-bottom: 12px;
+.talleres-grid .card-img {
+  width: 100%;
+  height: 150px !important;
+  max-height: 150px !important;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(0,229,255,0.35); /* filete azul */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 768px) {
+  .talleres-grid .card-img {
+    height: 130px !important;
+    max-height: 130px !important;
+  }
 }
 
 /* ==========================================================
-   TALLERES – ESTADO INACTIVO
+   TALLERES – Borde azul en tarjeta
 ========================================================== */
-.inactive {
-  opacity: 0.5;
+.talleres-grid .card {
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.10);
 }
 
+.talleres-grid .card:hover:not(.inactive) {
+  transform: translateY(-6px);
+  border-color: rgba(0,229,255,0.65);
+  box-shadow: 0 15px 40px rgba(0,229,255,0.25);
+}
+
+/* Inactivas */
+.inactive {
+  opacity: 0.55;
+}
 .inactive-button {
   background: rgba(148,163,184,0.2);
   color: #9ca3af;
