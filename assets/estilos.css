@@ -33,7 +33,7 @@ body {
 }
 
 /* ==========================================================
-   NAVBAR
+   NAVBAR – centrado y limpio
 ========================================================== */
 nav {
   width: 100%;
@@ -59,7 +59,7 @@ nav a:hover {
 }
 
 /* ==========================================================
-   HERO PRINCIPAL
+   HERO
 ========================================================== */
 .hero {
   text-align: center;
@@ -85,7 +85,7 @@ nav a:hover {
 }
 
 /* ==========================================================
-   TIPOGRAFÍA Y CENTRADO
+   UTILIDADES
 ========================================================== */
 .center {
   text-align: center;
@@ -133,15 +133,16 @@ nav a:hover {
 }
 
 /* ==========================================================
-   FOTO DE NOTICIAS
+   FOTO DE NOTICIAS – tipo banner SOLO en portal
 ========================================================== */
+.news-card .news-img,
 .news-img {
   width: 100%;
-  max-height: 260px;
+  max-height: 260px;      /* SOLO noticias → banner */
   object-fit: cover;
   border-radius: 14px;
   margin-bottom: 15px;
-  box-shadow: 0px 4px 14px rgba(0,0,0,0.40);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.40);
 }
 
 @media (max-width: 768px) {
@@ -169,13 +170,8 @@ footer img {
   margin-bottom: 12px;
 }
 
-footer p {
-  opacity: 0.85;
-  line-height: 1.4;
-}
-
 /* ==========================================================
-   RESPONSIVIDAD (celulares y tablets)
+   RESPONSIVIDAD GLOBAL
 ========================================================== */
 @media (max-width: 768px) {
   nav {
@@ -197,7 +193,7 @@ footer p {
 }
 
 /* ==========================================================
-   TALLERES – GRID PROFESIONAL
+   TALLERES – GRILLA
 ========================================================== */
 .talleres-grid {
   display: grid;
@@ -207,24 +203,49 @@ footer p {
 }
 
 /* ==========================================================
-   TALLERES – TARJETAS
+   TALLERES – TARJETAS MODERNAS
 ========================================================== */
-.card-img {
+.talleres-grid .card {
+  background: radial-gradient(circle at top left,
+      rgba(148,163,184,0.12),
+      rgba(15,23,42,0.92));
+  border-radius: 16px;
+  padding: 22px;
+  border: 1px solid rgba(31,41,55,0.85);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(15,23,42,0.6);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.talleres-grid .card:hover:not(.inactive) {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,229,255,0.2);
+}
+
+/* ==========================================================
+   TALLERES – IMÁGENES (tamaño DEFINITIVO)
+========================================================== */
+.talleres-grid .card-img {
   width: 100%;
-  height: 160px;
+  height: 160px !important;
+  max-height: 160px !important;
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 14px;
-  border: 1px solid rgba(148,163,184,0.3);
   box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+  border: 1px solid rgba(148,163,184,0.3);
 }
 
 @media (max-width: 768px) {
-  .card-img {
-    height: 140px;
+  .talleres-grid .card-img {
+    height: 140px !important;
+    max-height: 140px !important;
   }
 }
 
+/* ==========================================================
+   TALLERES – TEXTO
+========================================================== */
 .horario {
   font-size: 0.9rem;
   font-weight: 600;
@@ -236,7 +257,7 @@ footer p {
    TALLERES – ESTADO INACTIVO
 ========================================================== */
 .inactive {
-  opacity: 0.55;
+  opacity: 0.5;
 }
 
 .inactive-button {
@@ -244,13 +265,3 @@ footer p {
   color: #9ca3af;
   cursor: not-allowed;
 }
-
-.inactive:hover {
-  transform: none;
-  box-shadow: none;
-}
-
-
-
-
-
