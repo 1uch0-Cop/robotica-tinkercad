@@ -43,7 +43,9 @@ nav {
   border-bottom: 1px solid var(--borde);
   backdrop-filter: blur(6px);
   display: flex;
-  gap: 20px;
+  gap: 25px;
+  justify-content: center;   /* <-- CENTRA EL MENÚ */
+  align-items: center;
 }
 
 nav a {
@@ -195,3 +197,4 @@ footer p {
     text-align: center;
   }
 }
+
