@@ -131,20 +131,26 @@ nav a:hover {
   margin-bottom: 12px;
 }
 
-/* ==========================================================
-   NOTICIAS
-========================================================== */
-.news {
-  margin-top: 40px;
-}
-
+/* ============================
+   FOTO DE NOTICIAS (AJUSTADA)
+============================ */
 .news-img {
   width: 100%;
+  max-height: 260px;        /* altura máxima controlada */
+  object-fit: cover;         /* recorta de forma elegante */
   border-radius: 12px;
   margin-bottom: 15px;
-  object-fit: cover;
-  max-height: 300px;
+  display: block;
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.35);
 }
+
+/* Corrección para pantallas pequeñas */
+@media (max-width: 768px) {
+  .news-img {
+    max-height: 190px;
+  }
+}
+
 
 /* ==========================================================
    FOOTER
@@ -197,4 +203,5 @@ footer p {
     text-align: center;
   }
 }
+
 
