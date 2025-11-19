@@ -173,3 +173,33 @@ nav a:hover {
 .inactive {
   opacity: 0.55;
 }
+
+/* Separaciones mejoradas */
+.news {
+  margin-top: 60px;
+}
+
+.news-card {
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+/* Footer centrado */
+footer {
+  margin-top: 40px;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--borde);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+/* Logo footer tamaño correcto */
+footer img {
+  width: 65px;
+  height: auto;
+  display: block;
+  margin: 0 auto 12px auto;
+  opacity: 0.85;
+}
