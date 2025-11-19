@@ -133,3 +133,57 @@ footer img {
 footer p {
   opacity: 0.85;
 }
+/* ============================
+   HERO (encabezado principal)
+============================ */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.logo-hero {
+  width: 180px;
+  max-width: 60%;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: var(--cian);
+}
+
+.hero p {
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+/* ============================
+   CENTRADO
+============================ */
+.center {
+  text-align: center;
+}
+
+/* ============================
+   NOTICIAS
+============================ */
+.news {
+  margin-top: 40px;
+}
+
+.news-card {
+  background: rgba(10, 15, 31, 0.75);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.news-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
