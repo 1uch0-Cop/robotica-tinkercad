@@ -6,3 +6,4 @@ document.getElementById("navbar").innerHTML = `
   <a href="politica-privacidad.html">🔒 Privacidad</a>
 </nav>
 `;
+
