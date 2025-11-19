@@ -1,5 +1,5 @@
 /* ==========================================================
-   VARIABLES – Paleta oficial Guardianes del Desierto
+   VARIABLES – Paleta oficial
 ========================================================== */
 :root {
   --cobre: #b87333;
@@ -11,7 +11,7 @@
 }
 
 /* ==========================================================
-   RESETEO Y BASE
+   BASE
 ========================================================== */
 * {
   margin: 0;
@@ -33,7 +33,7 @@ body {
 }
 
 /* ==========================================================
-   NAVBAR – centrado y limpio
+   NAVBAR
 ========================================================== */
 nav {
   width: 100%;
@@ -42,8 +42,8 @@ nav {
   border-bottom: 1px solid var(--borde);
   backdrop-filter: blur(6px);
   display: flex;
-  justify-content: center;
   gap: 25px;
+  justify-content: center;
   align-items: center;
 }
 
@@ -51,7 +51,6 @@ nav a {
   color: var(--texto);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s ease;
 }
 
 nav a:hover {
@@ -63,137 +62,22 @@ nav a:hover {
 ========================================================== */
 .hero {
   text-align: center;
-  padding: 50px 20px 35px;
+  padding: 45px 20px 25px;
 }
 
 .logo-hero {
-  width: 180px;
+  width: 170px;
   max-width: 60%;
   margin-bottom: 15px;
-  filter: drop-shadow(0 0 10px rgba(0,0,0,0.35));
 }
 
 .hero h1 {
   font-size: 2.4rem;
-  margin-bottom: 10px;
   color: var(--cian);
 }
 
-.hero p {
-  font-size: 1.15rem;
-  opacity: 0.9;
-}
-
 /* ==========================================================
-   UTILIDADES
-========================================================== */
-.center {
-  text-align: center;
-}
-
-/* ==========================================================
-   BOTONES
-========================================================== */
-.btn {
-  display: inline-block;
-  padding: 12px 20px;
-  border-radius: 12px;
-  background: var(--cobre);
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: 10px;
-  transition: 0.25s ease;
-}
-
-.btn:hover {
-  background: #d78a47;
-  transform: translateY(-2px);
-}
-
-/* ==========================================================
-   TARJETAS GENERALES
-========================================================== */
-.card,
-.news-card {
-  background: var(--trans);
-  border: 1px solid var(--borde);
-  border-radius: 14px;
-  padding: 22px;
-  margin-bottom: 30px;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-}
-
-.card h2,
-.card h3,
-.news-card h3 {
-  color: var(--cian);
-  margin-bottom: 12px;
-}
-
-/* ==========================================================
-   FOTO DE NOTICIAS – tipo banner SOLO en portal
-========================================================== */
-.news-card .news-img,
-.news-img {
-  width: 100%;
-  max-height: 260px;      /* SOLO noticias → banner */
-  object-fit: cover;
-  border-radius: 14px;
-  margin-bottom: 15px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.40);
-}
-
-@media (max-width: 768px) {
-  .news-img {
-    max-height: 180px;
-  }
-}
-
-/* ==========================================================
-   FOOTER
-========================================================== */
-footer {
-  margin-top: 40px;
-  padding: 30px;
-  text-align: center;
-  font-size: 0.9rem;
-  border-top: 1px solid var(--borde);
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(6px);
-}
-
-footer img {
-  width: 85px;
-  opacity: 0.85;
-  margin-bottom: 12px;
-}
-
-/* ==========================================================
-   RESPONSIVIDAD GLOBAL
-========================================================== */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-  }
-
-  .hero h1 {
-    font-size: 1.9rem;
-  }
-
-  .logo-hero {
-    width: 150px;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* ==========================================================
-   TALLERES – Grilla fija 3x3 (pro)
+   TALLERES – GRILLA 3 COLUMNAS
 ========================================================== */
 .talleres-grid {
   display: grid;
@@ -202,14 +86,12 @@ footer img {
   margin-top: 25px;
 }
 
-/* 2 columnas para tablets */
 @media (max-width: 1024px) {
   .talleres-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* 1 columna para celulares */
 @media (max-width: 600px) {
   .talleres-grid {
     grid-template-columns: 1fr;
@@ -217,46 +99,77 @@ footer img {
 }
 
 /* ==========================================================
-   TALLERES – Fotos uniformes (150px)
+   TARJETAS
 ========================================================== */
-.talleres-grid .card-img {
-  width: 100%;
-  height: 150px !important;
-  max-height: 150px !important;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 14px;
-  border: 1px solid rgba(0,229,255,0.35); /* filete azul */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+.card {
+  background: var(--trans);
+  border: 1px solid rgba(0,229,255,0.35);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+  transition: 0.25s;
+  box-shadow: 0 0 12px rgba(0,229,255,0.15);
 }
 
-@media (max-width: 768px) {
-  .talleres-grid .card-img {
-    height: 130px !important;
-    max-height: 130px !important;
-  }
+.card:hover:not(.inactive) {
+  transform: translateY(-6px);
+  border-color: rgba(0,229,255,0.65);
+  box-shadow: 0 12px 32px rgba(0,229,255,0.25);
 }
 
 /* ==========================================================
-   TALLERES – Borde azul en tarjeta
+   FOTOS DE LOS TALLERES – AJUSTE PERFECTO
 ========================================================== */
-.talleres-grid .card {
-  border: 1px solid rgba(0, 229, 255, 0.35);
-  box-shadow: 0 0 18px rgba(0, 229, 255, 0.10);
+.card-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(0,229,255,0.35);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.35);
 }
 
-.talleres-grid .card:hover:not(.inactive) {
-  transform: translateY(-6px);
-  border-color: rgba(0,229,255,0.65);
-  box-shadow: 0 15px 40px rgba(0,229,255,0.25);
+/* ==========================================================
+   TEXTOS
+========================================================== */
+.card h3 {
+  color: var(--cian);
+  margin-bottom: 6px;
 }
 
-/* Inactivas */
-.inactive {
-  opacity: 0.55;
+.horario {
+  font-weight: 600;
+  opacity: 0.9;
+  margin-bottom: 12px;
 }
+
+/* ==========================================================
+   BOTONES
+========================================================== */
+.btn {
+  display: inline-block;
+  background: var(--cobre);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #c97a3b;
+}
+
 .inactive-button {
   background: rgba(148,163,184,0.2);
   color: #9ca3af;
   cursor: not-allowed;
+}
+
+/* ==========================================================
+   TARJETAS INACTIVAS
+========================================================== */
+.inactive {
+  opacity: 0.55;
 }
