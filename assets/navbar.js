@@ -1,18 +1,8 @@
-document.getElementById("footer").innerHTML = `
-<footer>
-  <img src="/assets/logo.webp">
-  <p>
-    Desarrollado con <span>❤️</span> por <strong>Luis Jofré Pérez</strong> – Escuela Las Canteras, Copiapó 🌵 <br>
-    Guardianes del Desierto © 2025 🦊
-  </p>
-</footer>
-`;
-document.getElementById("footer").innerHTML = `
-<footer>
-  <img src="/assets/logo.webp">
-  <p>
-    Desarrollado con <span>❤️</span> por <strong>Luis Jofré Pérez</strong> – Escuela Las Canteras, Copiapó 🌵 <br>
-    Guardianes del Desierto © 2025 🦊
-  </p>
-</footer>
+document.getElementById("navbar").innerHTML = `
+<nav class="nav-container">
+  <a href="/robotica-tinkercad/index.html">🏠 Inicio</a>
+  <a href="/robotica-tinkercad/talleres.html">📚 Talleres</a>
+  <a href="/robotica-tinkercad/dashboard.html">📊 Dashboard</a>
+  <a href="/robotica-tinkercad/politica-privacidad.html">🔒 Privacidad</a>
+</nav>
 `;
