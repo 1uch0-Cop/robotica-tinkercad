@@ -1,17 +1,18 @@
-/* ============================
-   VARIABLES
-============================ */
+/* ==========================================================
+   VARIABLES – Paleta oficial Guardianes del Desierto
+========================================================== */
 :root {
   --cobre: #b87333;
   --cian: #00e5ff;
   --oscuro: #0a0f1f;
   --texto: #f3f3f3;
   --borde: rgba(255,255,255,0.08);
+  --trans: rgba(10,15,31,0.75);
 }
 
-/* ============================
-   RESETEO BÁSICO
-============================ */
+/* ==========================================================
+   RESETEO Y BASE
+========================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -20,103 +21,135 @@
 
 body {
   font-family: "Segoe UI", system-ui, sans-serif;
-  background: radial-gradient(circle at top, #111827 0%, #020617 50%, #000 100%);
+  background: radial-gradient(circle at top, #111827 0%, #020617 45%, #000 100%);
   color: var(--texto);
   line-height: 1.6;
+  padding-bottom: 50px;
 }
 
-/* ============================
-   CONTENEDORES
-============================ */
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 20px;
 }
 
-/* ============================
-   LOGO GENERAL
-============================ */
-.logo {
-  width: 160px;
-  display: block;
-  margin: 0 auto 25px;
-}
-
-@media (max-width: 600px) {
-  .logo {
-    width: 120px;
-  }
-}
-
-/* ============================
-   TARJETAS
-============================ */
-.card {
-  background: rgba(10,15,31,0.75);
-  border: 1px solid var(--borde);
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 25px;
-  backdrop-filter: blur(6px);
-}
-
-.card h2 {
-  color: var(--cian);
-  margin-bottom: 12px;
-}
-
-.card p {
-  opacity: 0.95;
-}
-
-/* ============================
-   BOTONES
-============================ */
-.btn {
-  display: inline-block;
-  padding: 12px 18px;
-  border-radius: 10px;
-  background: var(--cobre);
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: 10px;
-  transition: 0.2s;
-}
-
-.btn:hover {
-  background: #d78a47;
-}
-
-/* ============================
-   NAVBAR (generado por JS)
-============================ */
+/* ==========================================================
+   NAVBAR
+========================================================== */
 nav {
   width: 100%;
   background: rgba(0, 0, 0, 0.45);
-  padding: 14px 20px;
+  padding: 14px 25px;
   border-bottom: 1px solid var(--borde);
   backdrop-filter: blur(6px);
+  display: flex;
+  gap: 20px;
 }
 
 nav a {
   color: var(--texto);
-  margin-right: 20px;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.2s;
 }
 
 nav a:hover {
   color: var(--cian);
 }
 
-/* ============================
-   FOOTER (generado por JS)
-============================ */
+/* ==========================================================
+   HERO PRINCIPAL
+========================================================== */
+.hero {
+  text-align: center;
+  padding: 50px 20px 35px;
+  margin-bottom: 20px;
+}
+
+.logo-hero {
+  width: 180px;
+  max-width: 60%;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 10px rgba(0,0,0,0.35));
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  color: var(--cian);
+}
+
+.hero p {
+  font-size: 1.15rem;
+  opacity: 0.9;
+}
+
+/* ==========================================================
+   TIPOGRAFÍA Y CENTRADO
+========================================================== */
+.center {
+  text-align: center;
+}
+
+/* ==========================================================
+   BOTONES
+========================================================== */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: var(--cobre);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  background: #d78a47;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   TARJETAS GENERALES
+========================================================== */
+.card, .news-card {
+  background: var(--trans);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  backdrop-filter: blur(6px);
+}
+
+.card h2,
+.news-card h3 {
+  color: var(--cian);
+  margin-bottom: 12px;
+}
+
+/* ==========================================================
+   NOTICIAS
+========================================================== */
+.news {
+  margin-top: 40px;
+}
+
+.news-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  object-fit: cover;
+  max-height: 300px;
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
 footer {
   margin-top: 40px;
-  padding: 25px;
+  padding: 30px;
   text-align: center;
   font-size: 0.9rem;
   border-top: 1px solid var(--borde);
@@ -125,65 +158,40 @@ footer {
 }
 
 footer img {
-  width: 80px;
+  width: 85px;
   opacity: 0.85;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 footer p {
   opacity: 0.85;
-}
-/* ============================
-   HERO (encabezado principal)
-============================ */
-.hero {
-  text-align: center;
-  padding: 50px 20px;
+  line-height: 1.4;
 }
 
-.logo-hero {
-  width: 180px;
-  max-width: 60%;
-  margin-bottom: 15px;
-}
+/* ==========================================================
+   RESPONSIVIDAD (celulares y tablets)
+========================================================== */
+@media (max-width: 768px) {
 
-.hero h1 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-  color: var(--cian);
-}
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.hero p {
-  opacity: 0.9;
-  font-size: 1.1rem;
-}
+  .hero h1 {
+    font-size: 1.9rem;
+  }
 
-/* ============================
-   CENTRADO
-============================ */
-.center {
-  text-align: center;
-}
+  .logo-hero {
+    width: 150px;
+  }
 
-/* ============================
-   NOTICIAS
-============================ */
-.news {
-  margin-top: 40px;
-}
+  .news-img {
+    max-height: 220px;
+  }
 
-.news-card {
-  background: rgba(10, 15, 31, 0.75);
-  border: 1px solid var(--borde);
-  border-radius: 12px;
-  padding: 20px;
-  margin-top: 20px;
-  backdrop-filter: blur(6px);
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
 }
-
-.news-img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
