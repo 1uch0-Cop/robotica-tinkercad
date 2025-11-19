@@ -1,92 +1,88 @@
 <!doctype html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Guardianes del Desierto – Portal Educativo</title>
 
-  <!-- Meta -->
-  <meta name="description" 
-        content="Portal educativo de los Guardianes del Desierto: talleres, recursos y actividades en ciberseguridad, robótica y tecnología para estudiantes del SLEP Atacama.">
-
-  <!-- Estilos -->
   <link rel="stylesheet" href="assets/estilos.css">
-
-  <!-- Navbar y Footer -->
   <script src="assets/navbar.js" defer></script>
   <script src="assets/footer.js" defer></script>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <div id="navbar"></div>
+<!-- NAV -->
+<div id="navbar"></div>
 
-  <!-- HERO -->
-  <header class="hero">
-    <img src="assets/logo.png" alt="Logo Guardianes del Desierto" class="logo-hero">
-    <h1>🦊 Guardianes del Desierto</h1>
-    <p>Programa Educativo en Ciberseguridad, Tecnología y Robótica</p>
-  </header>
+<!-- HERO -->
+<header class="hero">
+  <img src="assets/logo.png" class="logo-hero" alt="Logo Guardianes del Desierto">
+  <h1>🦊 Guardianes del Desierto</h1>
+  <p>Programa Educativo en Ciberseguridad, Tecnología y Robótica</p>
+</header>
 
-  <main class="container">
+<!-- CONTENIDO PRINCIPAL -->
+<main class="container">
 
-    <!-- Bienvenida -->
-    <section class="center" style="margin-bottom: 40px;">
-      <h2>Bienvenido al Portal Educativo</h2>
-      <p style="max-width: 780px; margin: 10px auto;">
-        Aquí encontrarás talleres, recursos, desafíos y herramientas diseñadas 
-        para acompañarte en tu camino de aprendizaje digital. 
-        Avanza a tu ritmo, explora contenidos y desarrolla habilidades del futuro.
-      </p>
+  <!-- SECCIÓN DE BIENVENIDA -->
+  <section class="bienvenida center">
+    <h2>Bienvenido al Portal Educativo</h2>
+    <p style="max-width:760px; margin: 0 auto;">
+      Explora talleres, recursos, desafíos y herramientas diseñadas para estudiantes 
+      del SLEP Atacama. Aprende, crea y desarrolla habilidades digitales del futuro.
+    </p>
+
+    <!-- BOTÓN EN SU PROPIO BLOQUE -->
+    <div class="block-separado" style="margin-top: 25px;">
       <a class="btn" href="talleres.html">Explorar Talleres</a>
-    </section>
+    </div>
+  </section>
 
-    <!-- Separador visual -->
-    <div style="height: 40px;"></div>
+  <!-- ESPACIO ENTRE SECCIONES -->
+  <div style="height: 50px;"></div>
 
-    <!-- DASHBOARD -->
-    <section class="card">
-      <h2>📊 Dashboard del Estudiante</h2>
+  <!-- DASHBOARD -->
+  <section class="card">
+    <h2>📊 Dashboard del Estudiante</h2>
+    <p>
+      Revisa tu progreso, sube evidencias y accede a material exclusivo 
+      del programa Guardianes del Desierto.
+    </p>
+    <p class="center">
+      <a href="dashboard.html" class="btn">Ingresar al Dashboard</a>
+    </p>
+  </section>
+
+  <!-- ESPACIO ENTRE BLOQUES -->
+  <div style="height: 60px;"></div>
+
+  <!-- NOTICIAS -->
+  <section class="news">
+    <h2 class="center">📰 Noticias Recientes</h2>
+
+    <div class="news-card">
+      <img src="assets/ia.webp" class="news-img" alt="Inteligencia Artificial en educación">
+      <h3>Escuela Las Canteras impulsa la seguridad informática</h3>
       <p>
-        Accede a tu panel personal donde podrás seguir tu progreso, revisar tus evidencias
-        y acceder a contenidos exclusivos del programa Guardianes del Desierto.
+        Durante octubre se desarrolló el primer CTF Escolar “Atrapa la Bandera Digital”,
+        con estudiantes demostrando habilidades en OSINT, lógica y ciberseguridad.
       </p>
       <p class="center">
-        <a href="dashboard.html" class="btn">Ir al Dashboard</a>
+        <a class="btn" 
+           target="_blank" 
+           href="https://slepatacama.cl/escuela-las-canteras-impulsa-la-cultura-de-seguridad-informatica-con-concurso-escolar-atrapa-la-bandera-digital/">
+           Leer noticia completa
+        </a>
       </p>
-    </section>
+    </div>
 
-    <!-- Separador visual -->
-    <div style="height: 45px;"></div>
+  </section>
 
-    <!-- NOTICIAS -->
-    <section class="news">
-      <h2 class="center">📰 Noticias Recientes</h2>
+</main>
 
-      <div class="news-card">
-        <img src="assets/ia.webp" class="news-img" alt="Inteligencia Artificial en la educación">
-        <h3>Escuela Las Canteras impulsa la seguridad informática</h3>
-        <p>
-          Durante octubre se desarrolló el primer CTF Escolar “Atrapa la Bandera Digital”, donde estudiantes
-          demostraron habilidades en OSINT, lógica y ciberseguridad.
-        </p>
-        <p class="center" style="margin-top:20px;">
-          <a href="https://slepatacama.cl/escuela-las-canteras-impulsa-la-cultura-de-seguridad-informatica-con-concurso-escolar-atrapa-la-bandera-digital/"
-            class="btn"
-            target="_blank"
-            rel="noopener noreferrer">
-            Leer noticia completa
-          </a>
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <div id="footer"></div>
+<!-- FOOTER -->
+<div id="footer"></div>
 
 </body>
 </html>
